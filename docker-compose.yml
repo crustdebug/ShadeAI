@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_DIR=/app/backend/models
+      - DATA_DIR=/app/backend/data
+    volumes:
+      - ./backend/data:/app/backend/data
+
+  frontend:
+    image: python:3.10-slim
+    working_dir: /app
+    command: >
+      sh -c "pip install streamlit requests pillow &&
+             streamlit run streamlit_app.py --server.port 8501 --server.address 0.0.0.0"
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    volumes:
+      - .:/app
+    environment:
+      - API_URL=http://backend:8000/api/v1/analyze

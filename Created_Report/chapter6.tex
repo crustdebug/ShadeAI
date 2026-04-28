@@ -1,0 +1,272 @@
+\chapter{Additional Information}
+
+\section{System Requirements Summary}
+
+\subsection{Minimum System Requirements}
+\begin{itemize}
+    \item Operating System: Windows 10/11, macOS 10.14+, Linux (Ubuntu 18.04+)
+    \item Processor: Intel Core i3 or AMD equivalent
+    \item RAM: 4GB
+    \item Storage: 500MB free space
+    \item Python: 3.10 or higher
+    \item Internet: Required for web app deployment
+\end{itemize}
+
+\subsection{Recommended System Requirements}
+\begin{itemize}
+    \item Operating System: Windows 11, macOS 12+, Linux (Ubuntu 20.04+)
+    \item Processor: Intel Core i5 or AMD equivalent
+    \item RAM: 8GB
+    \item Storage: 1GB free space
+    \item Python: 3.11 or higher
+    \item Internet: Broadband connection
+\end{itemize}
+
+\section{Installation Guide}
+
+\subsection{Local Installation}
+
+\textbf{Step 1: Install Python}
+\begin{verbatim}
+# Verify Python installation
+python --version  # Should be 3.10 or higher
+\end{verbatim}
+
+\textbf{Step 2: Clone Repository}
+\begin{verbatim}
+git clone https://github.com/username/shadeai.git
+cd shadeai
+\end{verbatim}
+
+\textbf{Step 3: Create Virtual Environment}
+\begin{verbatim}
+python -m venv .venv
+# Windows:
+.venv\Scripts\activate
+# macOS/Linux:
+source .venv/bin/activate
+\end{verbatim}
+
+\textbf{Step 4: Install Dependencies}
+\begin{verbatim}
+pip install -r requirements.txt
+\end{verbatim}
+
+\textbf{Step 5: Test Installation}
+\begin{verbatim}
+python shadeai_cli.py test1.jpg
+\end{verbatim}
+
+\subsection{Docker Installation}
+
+\textbf{Step 1: Install Docker}
+\begin{itemize}
+    \item Download from https://www.docker.com/
+    \item Follow installation instructions for your OS
+\end{itemize}
+
+\textbf{Step 2: Build and Run}
+\begin{verbatim}
+docker-compose up --build
+\end{verbatim}
+
+\textbf{Step 3: Access Applications}
+\begin{itemize}
+    \item Frontend: http://localhost:8501
+    \item Backend API: http://localhost:8000
+    \item API Documentation: http://localhost:8000/docs
+\end{itemize}
+
+\section{Usage Examples}
+
+\subsection{Command-Line Interface}
+
+\textbf{Basic Usage:}
+\begin{verbatim}
+python shadeai_cli.py image.jpg
+\end{verbatim}
+
+\textbf{Batch Processing:}
+\begin{verbatim}
+for image in *.jpg; do
+    python shadeai_cli.py "$image"
+done
+\end{verbatim}
+
+\subsection{Python API}
+
+\textbf{Example Code:}
+\begin{verbatim}
+import requests
+
+# Upload image
+with open('photo.jpg', 'rb') as f:
+    response = requests.post(
+        'http://localhost:8000/api/v1/analyze',
+        files={'file': f}
+    )
+
+# Parse results
+result = response.json()
+print(f"Skin Tone: {result['skin_tone']['label']}")
+print(f"Undertone: {result['undertone']['label']}")
+
+# Get recommendations
+for rec in result['recommendations']:
+    print(f"{rec['brand']} {rec['shade']}: ΔE={rec['delta_e']}")
+\end{verbatim}
+
+\subsection{Web Application}
+
+\textbf{Starting the Application:}
+\begin{verbatim}
+# Terminal 1: Start backend
+uvicorn backend.main:app --reload --port 8000
+
+# Terminal 2: Start frontend
+streamlit run streamlit_app.py
+\end{verbatim}
+
+\textbf{Using the Application:}
+\begin{enumerate}
+    \item Open http://localhost:8501 in browser
+    \item Upload photo or use camera
+    \item Review quality assessment
+    \item View skin tone analysis
+    \item Browse shade recommendations
+    \item Download results if needed
+\end{enumerate}
+
+\section{Troubleshooting}
+
+\subsection{Common Issues}
+
+\textbf{Issue: Face not detected}
+\begin{itemize}
+    \item Solution: Ensure face is frontal and well-lit
+    \item Solution: Try with relaxed detection parameters
+    \item Solution: Check photo quality score
+\end{itemize}
+
+\textbf{Issue: Poor accuracy}
+\begin{itemize}
+    \item Solution: Improve lighting conditions
+    \item Solution: Remove heavy makeup or filters
+    \item Solution: Use higher resolution image
+    \item Solution: Follow photo guidelines
+\end{itemize}
+
+\textbf{Issue: Slow processing}
+\begin{itemize}
+    \item Solution: Reduce image resolution
+    \item Solution: Close other applications
+    \item Solution: Check CPU usage
+\end{itemize}
+
+\textbf{Issue: Installation errors}
+\begin{itemize}
+    \item Solution: Update pip: \texttt{pip install --upgrade pip}
+    \item Solution: Install build tools
+    \item Solution: Use virtual environment
+\end{itemize}
+
+\section{Project Statistics}
+
+\subsection{Code Statistics}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Component} & \textbf{Files} & \textbf{Lines of Code} \\
+\hline
+Pipeline Modules & 6 & ~800 \\
+Utility Functions & 3 & ~400 \\
+API Routes & 1 & ~200 \\
+CLI Interface & 1 & ~150 \\
+Web Application & 1 & ~300 \\
+Tests & 3 & ~250 \\
+Documentation & 11 & ~5000 \\
+\hline
+\textbf{Total} & \textbf{26} & \textbf{~7100} \\
+\hline
+\end{tabular}
+\caption{Project Code Statistics}
+\end{table}
+
+\subsection{Development Timeline}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|c|}
+\hline
+\textbf{Phase} & \textbf{Activities} & \textbf{Duration} \\
+\hline
+Planning & Requirements, design & 2 weeks \\
+Implementation & Core pipeline & 4 weeks \\
+Database & Shade compilation & 2 weeks \\
+Testing & Accuracy evaluation & 2 weeks \\
+Optimization & Database expansion & 2 weeks \\
+Interfaces & CLI, Web, API & 3 weeks \\
+Documentation & Guides, reports & 2 weeks \\
+\hline
+\textbf{Total} & & \textbf{17 weeks} \\
+\hline
+\end{tabular}
+\caption{Development Timeline}
+\end{table}
+
+\subsection{Testing Statistics}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Metric} & \textbf{Value} \\
+\hline
+Test Images & 7 \\
+MST Classes Covered & 7 (MST-03 to MST-09) \\
+Total Recommendations & 35 \\
+Perfect Matches (ΔE < 1.0) & 4 (57.1\%) \\
+Excellent Matches (ΔE < 3.0) & 6 (85.7\%) \\
+Success Rate & 100\% \\
+Average Processing Time & 753.9 ms \\
+\hline
+\end{tabular}
+\caption{Testing Statistics}
+\end{table}
+
+\section{Acknowledgments}
+
+This project would not have been possible without:
+
+\begin{itemize}
+    \item \textbf{Dr. Ellis Monk} for developing the inclusive Monk Skin Tone scale
+    \item \textbf{OpenCV Community} for excellent computer vision libraries
+    \item \textbf{CIE} for standardizing color science and CIEDE2000
+    \item \textbf{Cosmetic Brands} for product information and shade data
+    \item \textbf{Open Source Community} for tools and frameworks
+    \item \textbf{Research Community} for published papers and methodologies
+    \item \textbf{Test Participants} for providing diverse test images
+\end{itemize}
+
+\section{Contact Information}
+
+\textbf{Project Repository:}
+\begin{itemize}
+    \item GitHub: https://github.com/username/shadeai
+    \item Documentation: https://shadeai.readthedocs.io
+\end{itemize}
+
+\textbf{Team Contact:}
+\begin{itemize}
+    \item Email: shadeai@example.com
+    \item Issues: GitHub Issues page
+\end{itemize}
+
+\textbf{Academic Institution:}
+\begin{itemize}
+    \item JSS Academy of Technical Education, Noida
+    \item Department of Computer Science and Engineering (AI \& ML)
+    \item Sector 62, Noida, Uttar Pradesh 201309
+\end{itemize}

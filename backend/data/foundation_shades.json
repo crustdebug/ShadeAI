@@ -1,0 +1,2868 @@
+[
+  {
+    "id": "BLACKOPAL-TLN610",
+    "brand": "Black Opal",
+    "product": "True Color",
+    "shade_name": "Truly Topaz",
+    "L": 50.0,
+    "a": 12.8,
+    "b": 21.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#B08E60",
+    "buy_url": "https://www.blackopalbeauty.com"
+  },
+  {
+    "id": "BLACKOPAL-TLN620",
+    "brand": "Black Opal",
+    "product": "True Color",
+    "shade_name": "Carob",
+    "L": 45.0,
+    "a": 13.2,
+    "b": 19.8,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07",
+      "MST-08"
+    ],
+    "hex_approx": "#A47E52",
+    "buy_url": "https://www.blackopalbeauty.com"
+  },
+  {
+    "id": "BLACKOPAL-TLN665",
+    "brand": "Black Opal",
+    "product": "True Color",
+    "shade_name": "Kalahari Sand",
+    "L": 43.5,
+    "a": 1.5,
+    "b": 14.8,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#9E7848",
+    "buy_url": "https://www.blackopalbeauty.com"
+  },
+  {
+    "id": "BLACKOPAL-TLN630",
+    "brand": "Black Opal",
+    "product": "True Color",
+    "shade_name": "Heavenly Honey",
+    "L": 42.0,
+    "a": 12.8,
+    "b": 18.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9A7A4E",
+    "buy_url": "https://www.blackopalbeauty.com"
+  },
+  {
+    "id": "BLACKOPAL-TLN645",
+    "brand": "Black Opal",
+    "product": "True Color",
+    "shade_name": "Hazelnut",
+    "L": 41.0,
+    "a": 13.0,
+    "b": 18.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9A7850",
+    "buy_url": "https://www.blackopalbeauty.com"
+  },
+  {
+    "id": "BLACKOPAL-TLN640",
+    "brand": "Black Opal",
+    "product": "True Color",
+    "shade_name": "Nutmeg",
+    "L": 38.0,
+    "a": 12.2,
+    "b": 16.8,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-08",
+      "MST-09"
+    ],
+    "hex_approx": "#8E6E42",
+    "buy_url": "https://www.blackopalbeauty.com"
+  },
+  {
+    "id": "BLACKOPAL-TLN650",
+    "brand": "Black Opal",
+    "product": "True Color",
+    "shade_name": "Beautiful Bronze",
+    "L": 34.0,
+    "a": 11.5,
+    "b": 14.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#82643A",
+    "buy_url": "https://www.blackopalbeauty.com"
+  },
+  {
+    "id": "BLACKOPAL-SUEDEMOCHA",
+    "brand": "Black Opal",
+    "product": "True Color",
+    "shade_name": "Suede Mocha",
+    "L": 33.0,
+    "a": 11.8,
+    "b": 14.2,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#826438",
+    "buy_url": "https://www.blackopalbeauty.com"
+  },
+  {
+    "id": "BLACKOPAL-TLN660",
+    "brand": "Black Opal",
+    "product": "True Color",
+    "shade_name": "Ebony",
+    "L": 30.0,
+    "a": 10.8,
+    "b": 13.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-09",
+      "MST-10"
+    ],
+    "hex_approx": "#7A5A32",
+    "buy_url": "https://www.blackopalbeauty.com"
+  },
+  {
+    "id": "BLACKOPAL-TLN680",
+    "brand": "Black Opal",
+    "product": "True Color",
+    "shade_name": "Heavenly Honey Deep",
+    "L": 29.0,
+    "a": 10.5,
+    "b": 12.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#78582E",
+    "buy_url": "https://www.blackopalbeauty.com"
+  },
+  {
+    "id": "BLACKOPAL-TLN670",
+    "brand": "Black Opal",
+    "product": "True Color",
+    "shade_name": "Mahogany",
+    "L": 27.0,
+    "a": 10.2,
+    "b": 11.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#72522C",
+    "buy_url": "https://www.blackopalbeauty.com"
+  },
+  {
+    "id": "BOBBI-00ALABASTER",
+    "brand": "Bobbi Brown",
+    "product": "Skin Foundation",
+    "shade_name": "00 Alabaster",
+    "L": 85.0,
+    "a": 4.5,
+    "b": 11.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F6E4D2",
+    "buy_url": "https://www.bobbibrowncosmetics.com"
+  },
+  {
+    "id": "BOBBI-1WARM-IVORY",
+    "brand": "Bobbi Brown",
+    "product": "Skin Foundation",
+    "shade_name": "1 Warm Ivory",
+    "L": 80.0,
+    "a": 5.5,
+    "b": 14.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-02"
+    ],
+    "hex_approx": "#F0DCC4",
+    "buy_url": "https://www.bobbibrowncosmetics.com"
+  },
+  {
+    "id": "BOBBI-3BEIGE",
+    "brand": "Bobbi Brown",
+    "product": "Skin Foundation",
+    "shade_name": "3 Beige",
+    "L": 70.0,
+    "a": 8.5,
+    "b": 19.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-03",
+      "MST-04"
+    ],
+    "hex_approx": "#DFC494",
+    "buy_url": "https://www.bobbibrowncosmetics.com"
+  },
+  {
+    "id": "BOBBI-4NATURAL",
+    "brand": "Bobbi Brown",
+    "product": "Skin Foundation",
+    "shade_name": "4 Natural",
+    "L": 64.0,
+    "a": 10.0,
+    "b": 21.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-05"
+    ],
+    "hex_approx": "#D2B07C",
+    "buy_url": "https://www.bobbibrowncosmetics.com"
+  },
+  {
+    "id": "BOBBI-3.5WARM-BEIGE",
+    "brand": "Bobbi Brown",
+    "product": "Skin Foundation",
+    "shade_name": "3.5 Warm Beige",
+    "L": 59.2,
+    "a": 6.5,
+    "b": 15.2,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-03"
+    ],
+    "hex_approx": "#CBAD87",
+    "buy_url": "https://www.bobbibrowncosmetics.com"
+  },
+  {
+    "id": "BOBBI-5HONEY",
+    "brand": "Bobbi Brown",
+    "product": "Skin Foundation",
+    "shade_name": "5 Honey",
+    "L": 56.0,
+    "a": 11.8,
+    "b": 22.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#BF9E70",
+    "buy_url": "https://www.bobbibrowncosmetics.com"
+  },
+  {
+    "id": "BOBBI-5.5WARM-SAND",
+    "brand": "Bobbi Brown",
+    "product": "Skin Foundation",
+    "shade_name": "5.5 Warm Sand",
+    "L": 51.0,
+    "a": 9.2,
+    "b": 12.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#B39066",
+    "buy_url": "https://www.bobbibrowncosmetics.com"
+  },
+  {
+    "id": "BOBBI-6GOLDEN",
+    "brand": "Bobbi Brown",
+    "product": "Skin Foundation",
+    "shade_name": "6 Golden",
+    "L": 50.0,
+    "a": 12.8,
+    "b": 21.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#B08E60",
+    "buy_url": "https://www.bobbibrowncosmetics.com"
+  },
+  {
+    "id": "BOBBI-7ALMOND",
+    "brand": "Bobbi Brown",
+    "product": "Skin Foundation",
+    "shade_name": "7 Almond",
+    "L": 44.0,
+    "a": 13.0,
+    "b": 19.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#A47C52",
+    "buy_url": "https://www.bobbibrowncosmetics.com"
+  },
+  {
+    "id": "BOBBI-8WALNUT",
+    "brand": "Bobbi Brown",
+    "product": "Skin Foundation",
+    "shade_name": "8 Walnut",
+    "L": 38.0,
+    "a": 12.2,
+    "b": 16.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-08",
+      "MST-09"
+    ],
+    "hex_approx": "#8E6E40",
+    "buy_url": "https://www.bobbibrowncosmetics.com"
+  },
+  {
+    "id": "BOBBI-9ESPRESSO",
+    "brand": "Bobbi Brown",
+    "product": "Skin Foundation",
+    "shade_name": "9 Espresso",
+    "L": 32.0,
+    "a": 11.0,
+    "b": 14.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#7E5E36",
+    "buy_url": "https://www.bobbibrowncosmetics.com"
+  },
+  {
+    "id": "CT-1FAIR",
+    "brand": "Charlotte Tilbury",
+    "product": "Airbrush Flawless",
+    "shade_name": "1 Fair",
+    "L": 84.0,
+    "a": 4.8,
+    "b": 12.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F5E4D0",
+    "buy_url": "https://www.charlottetilbury.com"
+  },
+  {
+    "id": "CT-3LIGHT",
+    "brand": "Charlotte Tilbury",
+    "product": "Airbrush Flawless",
+    "shade_name": "3 Light",
+    "L": 75.0,
+    "a": 6.5,
+    "b": 16.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-02",
+      "MST-03"
+    ],
+    "hex_approx": "#E6D2B2",
+    "buy_url": "https://www.charlottetilbury.com"
+  },
+  {
+    "id": "CT-5MEDIUM",
+    "brand": "Charlotte Tilbury",
+    "product": "Airbrush Flawless",
+    "shade_name": "5 Medium",
+    "L": 67.0,
+    "a": 9.0,
+    "b": 19.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-04"
+    ],
+    "hex_approx": "#DABA8E",
+    "buy_url": "https://www.charlottetilbury.com"
+  },
+  {
+    "id": "CT-7TAN",
+    "brand": "Charlotte Tilbury",
+    "product": "Airbrush Flawless",
+    "shade_name": "7 Tan",
+    "L": 59.0,
+    "a": 11.0,
+    "b": 21.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-05",
+      "MST-06"
+    ],
+    "hex_approx": "#C8A67A",
+    "buy_url": "https://www.charlottetilbury.com"
+  },
+  {
+    "id": "CT-9DEEP",
+    "brand": "Charlotte Tilbury",
+    "product": "Airbrush Flawless",
+    "shade_name": "9 Deep",
+    "L": 50.0,
+    "a": 12.5,
+    "b": 20.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-06",
+      "MST-07"
+    ],
+    "hex_approx": "#B09066",
+    "buy_url": "https://www.charlottetilbury.com"
+  },
+  {
+    "id": "CT-11RICH",
+    "brand": "Charlotte Tilbury",
+    "product": "Airbrush Flawless",
+    "shade_name": "11 Rich",
+    "L": 43.0,
+    "a": 13.0,
+    "b": 18.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9D7C52",
+    "buy_url": "https://www.charlottetilbury.com"
+  },
+  {
+    "id": "CT-13VERYDEEP",
+    "brand": "Charlotte Tilbury",
+    "product": "Airbrush Flawless",
+    "shade_name": "13 Very Deep",
+    "L": 35.0,
+    "a": 11.5,
+    "b": 14.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#8A683C",
+    "buy_url": "https://www.charlottetilbury.com"
+  },
+  {
+    "id": "CT-15EBONY",
+    "brand": "Charlotte Tilbury",
+    "product": "Airbrush Flawless",
+    "shade_name": "15 Ebony",
+    "L": 29.0,
+    "a": 10.0,
+    "b": 12.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#7A5A30",
+    "buy_url": "https://www.charlottetilbury.com"
+  },
+  {
+    "id": "ESTEE-1C0",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "1C0 Shell",
+    "L": 83.0,
+    "a": 4.5,
+    "b": 11.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F5E2CE",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-1W2",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "1W2 Sand",
+    "L": 76.0,
+    "a": 6.8,
+    "b": 16.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-02",
+      "MST-03"
+    ],
+    "hex_approx": "#E6D2B4",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-2N1",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "2N1 Desert Beige",
+    "L": 70.0,
+    "a": 8.0,
+    "b": 18.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-03",
+      "MST-04"
+    ],
+    "hex_approx": "#DFC698",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-3N1",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "3N1 Ivory Beige",
+    "L": 64.0,
+    "a": 10.2,
+    "b": 19.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-04",
+      "MST-05"
+    ],
+    "hex_approx": "#D2B484",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-3W1",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "3W1 Tawny",
+    "L": 62.0,
+    "a": 10.5,
+    "b": 21.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-05"
+    ],
+    "hex_approx": "#D0AE7C",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-2W2",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "2W2 Rattan",
+    "L": 59.8,
+    "a": 7.2,
+    "b": 16.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-03"
+    ],
+    "hex_approx": "#CDAF89",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-4N2",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "4N2 Spiced Sand",
+    "L": 56.0,
+    "a": 11.8,
+    "b": 22.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#BFA070",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-4W1",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "4W1 Honey Bronze",
+    "L": 53.0,
+    "a": 13.0,
+    "b": 23.8,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#B89464",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-4C1",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "4C1 Outdoor Beige",
+    "L": 50.5,
+    "a": 9.8,
+    "b": 13.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#B08C66",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-5W1",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "5W1 Bronze",
+    "L": 48.0,
+    "a": 13.0,
+    "b": 20.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#AE8C5E",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-6N1",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "6N1 Mocha",
+    "L": 42.0,
+    "a": 12.8,
+    "b": 17.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9A7A4C",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-7N1",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "7N1 Deep Amber",
+    "L": 36.0,
+    "a": 12.0,
+    "b": 15.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#8A6A3E",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "ESTEE-8N1",
+    "brand": "Est\u00e9e Lauder",
+    "product": "Double Wear",
+    "shade_name": "8N1 Espresso",
+    "L": 25.5,
+    "a": 9.5,
+    "b": 10.2,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#6A4E26",
+    "buy_url": "https://www.esteelauder.com"
+  },
+  {
+    "id": "FENTY-100N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "100",
+    "L": 82.5,
+    "a": 4.5,
+    "b": 9.8,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F4E2CC",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-105",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "105",
+    "L": 81.0,
+    "a": 5.0,
+    "b": 11.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-01",
+      "MST-02"
+    ],
+    "hex_approx": "#F2DEC6",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-110N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "110",
+    "L": 80.1,
+    "a": 4.8,
+    "b": 10.2,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-01",
+      "MST-02"
+    ],
+    "hex_approx": "#F2DEC8",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-120N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "120",
+    "L": 78.5,
+    "a": 5.2,
+    "b": 12.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-02"
+    ],
+    "hex_approx": "#EEDCC4",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-145W",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "145W",
+    "L": 77.0,
+    "a": 7.8,
+    "b": 19.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-02",
+      "MST-03"
+    ],
+    "hex_approx": "#E8D2B0",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-130N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "130",
+    "L": 76.0,
+    "a": 6.0,
+    "b": 14.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-02"
+    ],
+    "hex_approx": "#E8D6B8",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-150N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "150",
+    "L": 74.0,
+    "a": 7.0,
+    "b": 16.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-02",
+      "MST-03"
+    ],
+    "hex_approx": "#E5D0B0",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-170N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "170",
+    "L": 72.0,
+    "a": 7.5,
+    "b": 17.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-03"
+    ],
+    "hex_approx": "#E2CEAC",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-190N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "190",
+    "L": 69.0,
+    "a": 8.2,
+    "b": 18.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-03",
+      "MST-04"
+    ],
+    "hex_approx": "#DCC6A0",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-210N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "210",
+    "L": 66.0,
+    "a": 9.0,
+    "b": 19.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-04"
+    ],
+    "hex_approx": "#D6BE94",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-230N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "230",
+    "L": 65.0,
+    "a": 9.5,
+    "b": 20.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-04",
+      "MST-05"
+    ],
+    "hex_approx": "#D4B88C",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-240",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "240",
+    "L": 64.5,
+    "a": 9.8,
+    "b": 20.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-04",
+      "MST-05"
+    ],
+    "hex_approx": "#D2B68A",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-260N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "260",
+    "L": 61.0,
+    "a": 10.2,
+    "b": 21.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-05"
+    ],
+    "hex_approx": "#CCB084",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-290N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "290",
+    "L": 58.0,
+    "a": 11.0,
+    "b": 22.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-05",
+      "MST-06"
+    ],
+    "hex_approx": "#C2A478",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-300N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "300",
+    "L": 57.0,
+    "a": 11.2,
+    "b": 22.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-05",
+      "MST-06"
+    ],
+    "hex_approx": "#C2A678",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-310",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "310",
+    "L": 56.5,
+    "a": 11.8,
+    "b": 22.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#BFA074",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-335",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "335",
+    "L": 51.0,
+    "a": 9.3,
+    "b": 12.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#B29068",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-345N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "345",
+    "L": 50.0,
+    "a": 12.5,
+    "b": 20.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-06",
+      "MST-07"
+    ],
+    "hex_approx": "#B09064",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-360N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "360",
+    "L": 48.0,
+    "a": 12.8,
+    "b": 19.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#AE8E62",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-385W",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "385W",
+    "L": 47.5,
+    "a": 14.2,
+    "b": 23.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#AA865C",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-370",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "370",
+    "L": 46.5,
+    "a": 13.5,
+    "b": 21.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#A8885E",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-475",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "475",
+    "L": 44.0,
+    "a": 1.8,
+    "b": 14.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#A07A4A",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-385N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "385",
+    "L": 42.0,
+    "a": 12.5,
+    "b": 17.8,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-07",
+      "MST-08"
+    ],
+    "hex_approx": "#9D7C50",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-400N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "400",
+    "L": 40.0,
+    "a": 12.0,
+    "b": 16.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9A7A4E",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-420N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "420",
+    "L": 37.0,
+    "a": 11.8,
+    "b": 15.8,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-08",
+      "MST-09"
+    ],
+    "hex_approx": "#8E6E42",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-450N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "450",
+    "L": 35.0,
+    "a": 11.5,
+    "b": 15.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-08",
+      "MST-09"
+    ],
+    "hex_approx": "#8A683C",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-470N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "470",
+    "L": 32.0,
+    "a": 11.0,
+    "b": 13.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#826236",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-480",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "480",
+    "L": 31.5,
+    "a": 11.2,
+    "b": 13.2,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#7E6034",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-485",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "485",
+    "L": 30.5,
+    "a": 10.8,
+    "b": 13.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09",
+      "MST-10"
+    ],
+    "hex_approx": "#7C5E32",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-490N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "490",
+    "L": 30.0,
+    "a": 10.5,
+    "b": 12.8,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09",
+      "MST-10"
+    ],
+    "hex_approx": "#7A5A2E",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-495N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "495",
+    "L": 29.0,
+    "a": 10.2,
+    "b": 12.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#785826",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-498N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "498",
+    "L": 28.0,
+    "a": 10.0,
+    "b": 12.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09",
+      "MST-10"
+    ],
+    "hex_approx": "#775428",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "FENTY-496N",
+    "brand": "Fenty Beauty",
+    "product": "Pro Filt'r Soft Matte",
+    "shade_name": "496",
+    "L": 27.5,
+    "a": 9.8,
+    "b": 11.8,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#745424",
+    "buy_url": "https://www.fentybeauty.com"
+  },
+  {
+    "id": "HOURGLASS-0.5PEARL",
+    "brand": "Hourglass",
+    "product": "Vanish Foundation",
+    "shade_name": "0.5 Pearl",
+    "L": 87.0,
+    "a": 3.5,
+    "b": 8.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F8EAD8",
+    "buy_url": "https://www.hourglasscosmetics.com"
+  },
+  {
+    "id": "HOURGLASS-1BLANC",
+    "brand": "Hourglass",
+    "product": "Vanish Foundation",
+    "shade_name": "1 Blanc",
+    "L": 86.5,
+    "a": 3.8,
+    "b": 9.2,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F7E8D6",
+    "buy_url": "https://www.hourglasscosmetics.com"
+  },
+  {
+    "id": "HOURGLASS-7",
+    "brand": "Hourglass",
+    "product": "Vanish Foundation",
+    "shade_name": "7",
+    "L": 63.0,
+    "a": 10.5,
+    "b": 21.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-05"
+    ],
+    "hex_approx": "#CFAE7E",
+    "buy_url": "https://www.hourglasscosmetics.com"
+  },
+  {
+    "id": "HOURGLASS-8.5",
+    "brand": "Hourglass",
+    "product": "Vanish Foundation",
+    "shade_name": "8.5",
+    "L": 62.5,
+    "a": 11.0,
+    "b": 21.8,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-05"
+    ],
+    "hex_approx": "#CFAE7C",
+    "buy_url": "https://www.hourglasscosmetics.com"
+  },
+  {
+    "id": "HOURGLASS-9",
+    "brand": "Hourglass",
+    "product": "Vanish Foundation",
+    "shade_name": "9",
+    "L": 55.0,
+    "a": 12.0,
+    "b": 21.8,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#BC9C70",
+    "buy_url": "https://www.hourglasscosmetics.com"
+  },
+  {
+    "id": "HOURGLASS-12",
+    "brand": "Hourglass",
+    "product": "Vanish Foundation",
+    "shade_name": "12",
+    "L": 48.0,
+    "a": 13.0,
+    "b": 20.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#AE8A60",
+    "buy_url": "https://www.hourglasscosmetics.com"
+  },
+  {
+    "id": "HOURGLASS-15",
+    "brand": "Hourglass",
+    "product": "Vanish Foundation",
+    "shade_name": "15",
+    "L": 46.0,
+    "a": 12.5,
+    "b": 20.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-07",
+      "MST-08"
+    ],
+    "hex_approx": "#A68258",
+    "buy_url": "https://www.hourglasscosmetics.com"
+  },
+  {
+    "id": "HOURGLASS-18",
+    "brand": "Hourglass",
+    "product": "Vanish Foundation",
+    "shade_name": "18",
+    "L": 32.0,
+    "a": 11.5,
+    "b": 14.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#806236",
+    "buy_url": "https://www.hourglasscosmetics.com"
+  },
+  {
+    "id": "IMAN-EARTH4",
+    "brand": "Iman Cosmetics",
+    "product": "Second to None",
+    "shade_name": "Earth 4",
+    "L": 52.0,
+    "a": 12.5,
+    "b": 22.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06",
+      "MST-07"
+    ],
+    "hex_approx": "#B89264",
+    "buy_url": "https://www.imancosmetics.com"
+  },
+  {
+    "id": "IMAN-CLAY2",
+    "brand": "Iman Cosmetics",
+    "product": "Second to None",
+    "shade_name": "Clay 2",
+    "L": 46.0,
+    "a": 13.0,
+    "b": 20.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-07",
+      "MST-08"
+    ],
+    "hex_approx": "#A88058",
+    "buy_url": "https://www.imancosmetics.com"
+  },
+  {
+    "id": "IMAN-CLAY5",
+    "brand": "Iman Cosmetics",
+    "product": "Second to None",
+    "shade_name": "Clay 5",
+    "L": 43.0,
+    "a": 2.0,
+    "b": 15.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#9C7646",
+    "buy_url": "https://www.imancosmetics.com"
+  },
+  {
+    "id": "IMAN-CLAY3",
+    "brand": "Iman Cosmetics",
+    "product": "Second to None",
+    "shade_name": "Clay 3",
+    "L": 42.5,
+    "a": 12.8,
+    "b": 18.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9E7A52",
+    "buy_url": "https://www.imancosmetics.com"
+  },
+  {
+    "id": "IMAN-CLAY4",
+    "brand": "Iman Cosmetics",
+    "product": "Second to None",
+    "shade_name": "Clay 4",
+    "L": 40.0,
+    "a": 12.5,
+    "b": 17.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9A744C",
+    "buy_url": "https://www.imancosmetics.com"
+  },
+  {
+    "id": "IMAN-SAND3",
+    "brand": "Iman Cosmetics",
+    "product": "Second to None",
+    "shade_name": "Sand 3",
+    "L": 36.0,
+    "a": 11.8,
+    "b": 15.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#8A683E",
+    "buy_url": "https://www.imancosmetics.com"
+  },
+  {
+    "id": "IMAN-EARTH1",
+    "brand": "Iman Cosmetics",
+    "product": "Second to None",
+    "shade_name": "Earth 1",
+    "L": 35.5,
+    "a": 12.0,
+    "b": 15.2,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#8A683C",
+    "buy_url": "https://www.imancosmetics.com"
+  },
+  {
+    "id": "IMAN-EARTH10",
+    "brand": "Iman Cosmetics",
+    "product": "Second to None",
+    "shade_name": "Earth 10",
+    "L": 32.0,
+    "a": 11.0,
+    "b": 13.8,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#7E5E34",
+    "buy_url": "https://www.imancosmetics.com"
+  },
+  {
+    "id": "IMAN-EARTH12",
+    "brand": "Iman Cosmetics",
+    "product": "Second to None",
+    "shade_name": "Earth 12",
+    "L": 28.5,
+    "a": 10.2,
+    "b": 12.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#76562C",
+    "buy_url": "https://www.imancosmetics.com"
+  },
+  {
+    "id": "IMAN-CLAY6",
+    "brand": "Iman Cosmetics",
+    "product": "Second to None",
+    "shade_name": "Clay 6",
+    "L": 28.0,
+    "a": 10.2,
+    "b": 12.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#74542A",
+    "buy_url": "https://www.imancosmetics.com"
+  },
+  {
+    "id": "LOREAL-102C",
+    "brand": "L'Or\u00c3\u00a9al",
+    "product": "True Match",
+    "shade_name": "C1 Alabaster",
+    "L": 83.0,
+    "a": 4.2,
+    "b": 10.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F5E2CE",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-W3",
+    "brand": "L'Or\u00c3\u00a9al",
+    "product": "True Match",
+    "shade_name": "W3 Nude Beige",
+    "L": 70.0,
+    "a": 8.0,
+    "b": 19.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-03",
+      "MST-04"
+    ],
+    "hex_approx": "#DFC394",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-N5",
+    "brand": "L'Or\u00c3\u00a9al",
+    "product": "True Match",
+    "shade_name": "N5 True Beige",
+    "L": 63.0,
+    "a": 10.5,
+    "b": 21.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-05"
+    ],
+    "hex_approx": "#D0AD7A",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-W7",
+    "brand": "L'Or\u00c3\u00a9al",
+    "product": "True Match",
+    "shade_name": "W7 Caramel Beige",
+    "L": 55.0,
+    "a": 12.0,
+    "b": 23.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06",
+      "MST-07"
+    ],
+    "hex_approx": "#BC9866",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-C2",
+    "brand": "L'Or\u00e9al",
+    "product": "True Match",
+    "shade_name": "C2 Natural Ivory",
+    "L": 80.0,
+    "a": 4.8,
+    "b": 12.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01",
+      "MST-02"
+    ],
+    "hex_approx": "#F2DEC8",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-N2",
+    "brand": "L'Or\u00e9al",
+    "product": "True Match",
+    "shade_name": "N2 Classic Ivory",
+    "L": 78.0,
+    "a": 5.5,
+    "b": 14.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-02"
+    ],
+    "hex_approx": "#EEDAC2",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-W4",
+    "brand": "L'Or\u00e9al",
+    "product": "True Match",
+    "shade_name": "W4 Natural Beige",
+    "L": 68.0,
+    "a": 8.5,
+    "b": 19.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-04"
+    ],
+    "hex_approx": "#DCBC90",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-N6",
+    "brand": "L'Or\u00e9al",
+    "product": "True Match",
+    "shade_name": "N6 Honey Beige",
+    "L": 60.0,
+    "a": 10.8,
+    "b": 22.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-05"
+    ],
+    "hex_approx": "#CCAA78",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-W5.5",
+    "brand": "L'Or\u00e9al",
+    "product": "True Match",
+    "shade_name": "W5.5 Suntan",
+    "L": 55.0,
+    "a": 12.5,
+    "b": 24.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#BC9A68",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-N7",
+    "brand": "L'Or\u00e9al",
+    "product": "True Match",
+    "shade_name": "N7 Classic Tan",
+    "L": 54.0,
+    "a": 12.2,
+    "b": 22.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#B89668",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-W8",
+    "brand": "L'Or\u00e9al",
+    "product": "True Match",
+    "shade_name": "W8 Caffe",
+    "L": 52.0,
+    "a": 12.5,
+    "b": 23.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06",
+      "MST-07"
+    ],
+    "hex_approx": "#B89464",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-N6.5",
+    "brand": "L'Or\u00e9al",
+    "product": "True Match",
+    "shade_name": "N6.5 Fresh Beige",
+    "L": 51.0,
+    "a": 9.5,
+    "b": 12.8,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#B28E68",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-N9",
+    "brand": "L'Or\u00e9al",
+    "product": "True Match",
+    "shade_name": "N9 Mahogany",
+    "L": 45.0,
+    "a": 13.2,
+    "b": 19.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-07",
+      "MST-08"
+    ],
+    "hex_approx": "#A68058",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-W9",
+    "brand": "L'Or\u00e9al",
+    "product": "True Match",
+    "shade_name": "W9 Deep Golden",
+    "L": 42.0,
+    "a": 13.0,
+    "b": 19.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9A7A50",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LOREAL-N10",
+    "brand": "L'Or\u00e9al",
+    "product": "True Match",
+    "shade_name": "N10 Classic Espresso",
+    "L": 35.0,
+    "a": 11.5,
+    "b": 15.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#8A683A",
+    "buy_url": "https://www.lorealparisusa.com"
+  },
+  {
+    "id": "LANCOME-100N",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "100 Ivoire N",
+    "L": 84.0,
+    "a": 4.0,
+    "b": 10.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F6E4CE",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-090N",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "090 Ivoire N",
+    "L": 83.0,
+    "a": 4.8,
+    "b": 12.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F5E2CE",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-110C",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "110C",
+    "L": 82.0,
+    "a": 6.2,
+    "b": 10.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01",
+      "MST-02"
+    ],
+    "hex_approx": "#F4DEC8",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-210W",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "210 Buff W",
+    "L": 72.0,
+    "a": 7.5,
+    "b": 17.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-03"
+    ],
+    "hex_approx": "#E2CAA8",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-330N",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "330 Bisque C",
+    "L": 65.0,
+    "a": 9.5,
+    "b": 19.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-04"
+    ],
+    "hex_approx": "#D4B88C",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-360N",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "360 Bisque N",
+    "L": 62.0,
+    "a": 10.5,
+    "b": 21.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-05"
+    ],
+    "hex_approx": "#CFAE7A",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-420N",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "420 Bisque N",
+    "L": 57.0,
+    "a": 11.5,
+    "b": 22.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#C2A276",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-450W",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "450 Suede W",
+    "L": 54.0,
+    "a": 12.0,
+    "b": 22.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06",
+      "MST-07"
+    ],
+    "hex_approx": "#B89666",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-500N",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "500 Suede N",
+    "L": 48.0,
+    "a": 13.0,
+    "b": 20.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#AE8A5C",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-500W",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "500 Suede W",
+    "L": 47.0,
+    "a": 13.2,
+    "b": 21.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#AA885E",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-470C",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "470C",
+    "L": 43.5,
+    "a": 14.1,
+    "b": 14.8,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9E784A",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-532N",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "532 Beige Chataigne",
+    "L": 42.0,
+    "a": 12.5,
+    "b": 18.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9A7A4E",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-570N",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "570 Suede C",
+    "L": 27.0,
+    "a": 10.0,
+    "b": 11.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#72522A",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "LANCOME-560C",
+    "brand": "Lanc\u00f4me",
+    "product": "Teint Idole Ultra Wear",
+    "shade_name": "560C",
+    "L": 26.5,
+    "a": 10.2,
+    "b": 10.8,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#6E5228",
+    "buy_url": "https://www.lancome-usa.com"
+  },
+  {
+    "id": "MAC-NW10",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NW10",
+    "L": 86.5,
+    "a": 3.8,
+    "b": 9.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F7E8D8",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC05",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC05",
+    "L": 84.2,
+    "a": 5.1,
+    "b": 14.3,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-01",
+      "MST-02"
+    ],
+    "hex_approx": "#F5E4D0",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NW13",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NW13",
+    "L": 84.0,
+    "a": 4.2,
+    "b": 10.8,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F6E4D2",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NW20",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NW20",
+    "L": 78.0,
+    "a": 5.5,
+    "b": 13.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-02"
+    ],
+    "hex_approx": "#EDD8C0",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC15",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC15",
+    "L": 76.5,
+    "a": 7.2,
+    "b": 18.6,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-02",
+      "MST-03"
+    ],
+    "hex_approx": "#EDD5B5",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NW25",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NW25",
+    "L": 73.0,
+    "a": 6.8,
+    "b": 16.2,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-03"
+    ],
+    "hex_approx": "#E4CCAE",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC20",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC20",
+    "L": 72.0,
+    "a": 8.5,
+    "b": 20.2,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-03",
+      "MST-04"
+    ],
+    "hex_approx": "#E8C9A0",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC25",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC25",
+    "L": 68.0,
+    "a": 10.0,
+    "b": 22.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-04"
+    ],
+    "hex_approx": "#DCBA8C",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC30",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC30",
+    "L": 62.0,
+    "a": 11.5,
+    "b": 23.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-05"
+    ],
+    "hex_approx": "#CFAB78",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC18",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC18",
+    "L": 59.5,
+    "a": 6.8,
+    "b": 15.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-03"
+    ],
+    "hex_approx": "#CCAE88",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC35",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC35",
+    "L": 58.0,
+    "a": 12.5,
+    "b": 24.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-05",
+      "MST-06"
+    ],
+    "hex_approx": "#C29C64",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC38",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC38",
+    "L": 54.5,
+    "a": 12.8,
+    "b": 23.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#BA9A6E",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC40",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC40",
+    "L": 52.0,
+    "a": 13.5,
+    "b": 23.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06",
+      "MST-07"
+    ],
+    "hex_approx": "#B58D50",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NW43",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NW43",
+    "L": 51.0,
+    "a": 9.5,
+    "b": 13.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#B28E68",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC42",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC42",
+    "L": 48.5,
+    "a": 13.8,
+    "b": 22.2,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#A4803E",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC45",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC45",
+    "L": 46.0,
+    "a": 14.0,
+    "b": 21.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07",
+      "MST-08"
+    ],
+    "hex_approx": "#A87E3C",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NW50",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NW50",
+    "L": 43.8,
+    "a": 2.5,
+    "b": 15.2,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#9E784C",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC47",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC47",
+    "L": 43.0,
+    "a": 13.5,
+    "b": 19.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#97732A",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC50",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC50",
+    "L": 40.0,
+    "a": 13.0,
+    "b": 18.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9B6F28",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NC55",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NC55",
+    "L": 36.0,
+    "a": 12.2,
+    "b": 16.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#8A6520",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NW55",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NW55",
+    "L": 28.5,
+    "a": 10.5,
+    "b": 11.2,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#74562C",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAC-NW58",
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade_name": "NW58",
+    "L": 27.5,
+    "a": 9.8,
+    "b": 11.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#72542A",
+    "buy_url": "https://www.maccosmetics.com"
+  },
+  {
+    "id": "MAYBELLINE-110W",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "110 Porcelain",
+    "L": 84.0,
+    "a": 5.0,
+    "b": 13.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F5E2CA",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-120W",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "120 Classic Ivory",
+    "L": 82.3,
+    "a": 5.6,
+    "b": 15.8,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-01",
+      "MST-02"
+    ],
+    "hex_approx": "#F3DFC5",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-102C",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "102 Fair Porcelain",
+    "L": 82.0,
+    "a": 4.5,
+    "b": 11.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F4E0CC",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-115C",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "115 Ivory",
+    "L": 81.0,
+    "a": 4.8,
+    "b": 12.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01",
+      "MST-02"
+    ],
+    "hex_approx": "#F2DEC6",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-118C",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "118 Light Beige",
+    "L": 77.0,
+    "a": 6.0,
+    "b": 15.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-02",
+      "MST-03"
+    ],
+    "hex_approx": "#E8D2B0",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-128N",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "128 Warm Nude",
+    "L": 75.0,
+    "a": 6.8,
+    "b": 17.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-02",
+      "MST-03"
+    ],
+    "hex_approx": "#E6D4B4",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-220N",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "220 Natural Beige",
+    "L": 68.0,
+    "a": 9.0,
+    "b": 19.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-04"
+    ],
+    "hex_approx": "#DCBA8C",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-235N",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "235 Pure Beige",
+    "L": 66.0,
+    "a": 9.5,
+    "b": 20.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-04"
+    ],
+    "hex_approx": "#D4B890",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-228N",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "228 Soft Tan",
+    "L": 64.0,
+    "a": 10.0,
+    "b": 20.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-04",
+      "MST-05"
+    ],
+    "hex_approx": "#D2B486",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-310W",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "310 Sun Beige",
+    "L": 60.0,
+    "a": 11.0,
+    "b": 22.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-05",
+      "MST-06"
+    ],
+    "hex_approx": "#CCA878",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-322W",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "322 Warm Honey",
+    "L": 58.0,
+    "a": 11.5,
+    "b": 22.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#C2A274",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-355C",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "355 Coconut",
+    "L": 54.0,
+    "a": 12.0,
+    "b": 20.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-06",
+      "MST-07"
+    ],
+    "hex_approx": "#B89464",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-330N",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "330 Toffee",
+    "L": 54.0,
+    "a": 12.2,
+    "b": 21.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-06",
+      "MST-07"
+    ],
+    "hex_approx": "#B89868",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-332W",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "332 Golden Caramel",
+    "L": 52.0,
+    "a": 12.8,
+    "b": 22.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06",
+      "MST-07"
+    ],
+    "hex_approx": "#B69266",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-312N",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "312 Golden",
+    "L": 51.5,
+    "a": 9.0,
+    "b": 12.0,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#B49068",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-360W",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "360 Mocha",
+    "L": 48.0,
+    "a": 13.0,
+    "b": 19.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#AE8A5C",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-368W",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "368 Cappuccino",
+    "L": 45.0,
+    "a": 13.5,
+    "b": 19.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07",
+      "MST-08"
+    ],
+    "hex_approx": "#A4805A",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "MAYBELLINE-375C",
+    "brand": "Maybelline",
+    "product": "Fit Me Matte + Poreless",
+    "shade_name": "375 Java",
+    "L": 42.0,
+    "a": 12.5,
+    "b": 17.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#9A7C50",
+    "buy_url": "https://www.maybelline.com"
+  },
+  {
+    "id": "NARS-SIBERIA",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Siberia",
+    "L": 85.0,
+    "a": 4.0,
+    "b": 9.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F6E6D4",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-OSLO",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Oslo",
+    "L": 82.0,
+    "a": 4.5,
+    "b": 11.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01"
+    ],
+    "hex_approx": "#F4E0CE",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-MONT-BLANC",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Mont Blanc",
+    "L": 79.0,
+    "a": 5.5,
+    "b": 14.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-02"
+    ],
+    "hex_approx": "#EEDAC2",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-DEAUVILLE",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Deauville",
+    "L": 76.0,
+    "a": 6.5,
+    "b": 16.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-02",
+      "MST-03"
+    ],
+    "hex_approx": "#E8D4B6",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-GOBI",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Gobi",
+    "L": 75.0,
+    "a": 6.5,
+    "b": 17.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-02",
+      "MST-03"
+    ],
+    "hex_approx": "#E6D2B2",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-STROMBOLI",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Stromboli",
+    "L": 64.0,
+    "a": 10.0,
+    "b": 21.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-04",
+      "MST-05"
+    ],
+    "hex_approx": "#D2B68A",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-PUNJAB",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Punjab",
+    "L": 60.0,
+    "a": 10.8,
+    "b": 21.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-05"
+    ],
+    "hex_approx": "#CCAA7C",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-CEYLAN",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Ceylan",
+    "L": 59.0,
+    "a": 7.0,
+    "b": 15.8,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-03"
+    ],
+    "hex_approx": "#CAAC86",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-TAHOE",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Tahoe",
+    "L": 56.0,
+    "a": 11.5,
+    "b": 22.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-05",
+      "MST-06"
+    ],
+    "hex_approx": "#BFA276",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-CADIZ",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Cadiz",
+    "L": 52.0,
+    "a": 12.5,
+    "b": 21.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06",
+      "MST-07"
+    ],
+    "hex_approx": "#B89268",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-BARCELONA",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Barcelona",
+    "L": 51.5,
+    "a": 9.0,
+    "b": 12.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#B49068",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-MACAO",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Macao",
+    "L": 44.0,
+    "a": 13.0,
+    "b": 18.5,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-08"
+    ],
+    "hex_approx": "#A47E54",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-BENARES",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Benares",
+    "L": 43.2,
+    "a": 1.2,
+    "b": 14.0,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-09"
+    ],
+    "hex_approx": "#9C7644",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "NARS-MACAO-DEEP",
+    "brand": "NARS",
+    "product": "Sheer Glow Foundation",
+    "shade_name": "Macao Deep",
+    "L": 29.5,
+    "a": 10.8,
+    "b": 12.8,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#7A5A30",
+    "buy_url": "https://www.narscosmetics.com"
+  },
+  {
+    "id": "PATMCGRATH-LIGHT1",
+    "brand": "Pat McGrath",
+    "product": "Skin Fetish Foundation",
+    "shade_name": "Light 1",
+    "L": 82.5,
+    "a": 4.5,
+    "b": 11.5,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-01",
+      "MST-02"
+    ],
+    "hex_approx": "#F4E0CA",
+    "buy_url": "https://www.patmcgrath.com"
+  },
+  {
+    "id": "PATMCGRATH-LIGHT2",
+    "brand": "Pat McGrath",
+    "product": "Skin Fetish Foundation",
+    "shade_name": "Light 2",
+    "L": 81.2,
+    "a": 4.9,
+    "b": 12.8,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-02"
+    ],
+    "hex_approx": "#F2DCC6",
+    "buy_url": "https://www.patmcgrath.com"
+  },
+  {
+    "id": "PATMCGRATH-MEDIUM12",
+    "brand": "Pat McGrath",
+    "product": "Skin Fetish Foundation",
+    "shade_name": "Medium 12",
+    "L": 61.0,
+    "a": 10.0,
+    "b": 20.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-05"
+    ],
+    "hex_approx": "#CCAA7A",
+    "buy_url": "https://www.patmcgrath.com"
+  },
+  {
+    "id": "PATMCGRATH-MEDIUM15",
+    "brand": "Pat McGrath",
+    "product": "Skin Fetish Foundation",
+    "shade_name": "Medium 15",
+    "L": 58.5,
+    "a": 11.5,
+    "b": 22.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-05",
+      "MST-06"
+    ],
+    "hex_approx": "#C4A476",
+    "buy_url": "https://www.patmcgrath.com"
+  },
+  {
+    "id": "PATMCGRATH-MEDIUM18",
+    "brand": "Pat McGrath",
+    "product": "Skin Fetish Foundation",
+    "shade_name": "Medium 18",
+    "L": 54.0,
+    "a": 12.5,
+    "b": 22.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-06"
+    ],
+    "hex_approx": "#B8986C",
+    "buy_url": "https://www.patmcgrath.com"
+  },
+  {
+    "id": "PATMCGRATH-DEEP18",
+    "brand": "Pat McGrath",
+    "product": "Skin Fetish Foundation",
+    "shade_name": "Deep 18",
+    "L": 46.0,
+    "a": 13.8,
+    "b": 20.0,
+    "undertone": "Warm",
+    "mst_range": [
+      "MST-07"
+    ],
+    "hex_approx": "#A6865C",
+    "buy_url": "https://www.patmcgrath.com"
+  },
+  {
+    "id": "PATMCGRATH-DEEP21",
+    "brand": "Pat McGrath",
+    "product": "Skin Fetish Foundation",
+    "shade_name": "Deep 21",
+    "L": 44.5,
+    "a": 13.2,
+    "b": 18.2,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-07",
+      "MST-08"
+    ],
+    "hex_approx": "#A27E52",
+    "buy_url": "https://www.patmcgrath.com"
+  },
+  {
+    "id": "PATMCGRATH-DEEP30",
+    "brand": "Pat McGrath",
+    "product": "Skin Fetish Foundation",
+    "shade_name": "Deep 30",
+    "L": 28.0,
+    "a": 10.0,
+    "b": 11.5,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#74562C",
+    "buy_url": "https://www.patmcgrath.com"
+  },
+  {
+    "id": "PATMCGRATH-DEEP33",
+    "brand": "Pat McGrath",
+    "product": "Skin Fetish Foundation",
+    "shade_name": "Deep 33",
+    "L": 26.0,
+    "a": 9.5,
+    "b": 10.8,
+    "undertone": "Cool",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#6E5028",
+    "buy_url": "https://www.patmcgrath.com"
+  },
+  {
+    "id": "PATMCGRATH-DEEP36",
+    "brand": "Pat McGrath",
+    "product": "Skin Fetish Foundation",
+    "shade_name": "Deep 36",
+    "L": 24.0,
+    "a": 9.0,
+    "b": 9.8,
+    "undertone": "Neutral",
+    "mst_range": [
+      "MST-10"
+    ],
+    "hex_approx": "#664A22",
+    "buy_url": "https://www.patmcgrath.com"
+  }
+]

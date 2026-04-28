@@ -1,0 +1,701 @@
+\chapter{System Design and Methodology}
+
+\section{System Overview}
+
+ShadeAI is designed as a modular, pipeline-based system that processes facial photographs through six distinct stages to produce foundation shade recommendations. The system architecture emphasizes:
+
+\begin{itemize}
+    \item \textbf{Modularity:} Each component is independent and can be tested, modified, or replaced without affecting others
+    \item \textbf{Scalability:} The system can process single images or batches efficiently
+    \item \textbf{Accessibility:} No training data or GPU hardware required
+    \item \textbf{Accuracy:} Research-grade performance using classical computer vision and color science
+    \item \textbf{Usability:} Multiple interfaces for different use cases
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\begin{verbatim}
+Input Image
+    ↓
+[1] Preprocessing (White Balance, Color Spaces)
+    ↓
+[2] Face Detection (Haar Cascade)
+    ↓
+[3] Skin Segmentation (HSV + YCbCr)
+    ↓
+[4] Feature Extraction (ITA°, LAB Statistics)
+    ↓
+[5] Classification (MST, Undertone)
+    ↓
+[6] Shade Recommendation (CIEDE2000)
+    ↓
+Output (Top 5 Shades)
+\end{verbatim}
+\caption{ShadeAI Processing Pipeline}
+\end{figure}
+
+\section{System Architecture}
+
+\subsection{High-Level Architecture}
+
+The system follows a three-tier architecture:
+
+\begin{enumerate}
+    \item \textbf{Presentation Layer:}
+    \begin{itemize}
+        \item Command-line interface (shadeai\_cli.py)
+        \item Web application (streamlit\_app.py)
+        \item REST API (backend/api/routes.py)
+    \end{itemize}
+    
+    \item \textbf{Business Logic Layer:}
+    \begin{itemize}
+        \item Pipeline modules (backend/pipeline/)
+        \item Utility functions (backend/utils/)
+        \item Photo quality checker
+    \end{itemize}
+    
+    \item \textbf{Data Layer:}
+    \begin{itemize}
+        \item Foundation shade database (JSON)
+        \item Pre-trained models (Haar Cascade)
+        \item Configuration files
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Module Organization}
+
+\begin{verbatim}
+shadeai/
+├── backend/
+│   ├── pipeline/
+│   │   ├── preprocessor.py          # Module 1
+│   │   ├── face_detector.py         # Module 2
+│   │   ├── skin_segmentor.py        # Module 3
+│   │   ├── feature_extractor.py     # Module 4
+│   │   ├── classifier.py            # Module 5
+│   │   └── shade_recommender.py     # Module 6
+│   ├── utils/
+│   │   ├── ciede2000.py
+│   │   ├── color_utils.py
+│   │   └── photo_quality.py
+│   ├── api/
+│   │   └── routes.py
+│   ├── data/
+│   │   └── foundation_shades.json
+│   └── main.py
+├── shadeai_cli.py
+├── streamlit_app.py
+└── requirements.txt
+\end{verbatim}
+
+\section{Pipeline Modules}
+
+\subsection{Module 1: Image Preprocessing}
+
+\subsubsection{Purpose}
+The preprocessing module prepares input images for analysis by correcting color casts, converting color spaces, and validating image quality.
+
+\subsubsection{White Balance Correction}
+
+White balance correction removes color casts caused by different lighting conditions. ShadeAI implements the Gray World algorithm:
+
+\textbf{Algorithm:}
+\begin{enumerate}
+    \item Calculate average RGB values: $\bar{R}, \bar{G}, \bar{B}$
+    \item Compute gray value: $gray = (\bar{R} + \bar{G} + \bar{B}) / 3$
+    \item Calculate scaling factors:
+    \begin{align}
+        k_R &= gray / \bar{R} \\
+        k_G &= gray / \bar{G} \\
+        k_B &= gray / \bar{B}
+    \end{align}
+    \item Apply corrections: $R' = R \times k_R$, $G' = G \times k_G$, $B' = B \times k_B$
+    \item Clip values to [0, 255]
+\end{enumerate}
+
+\textbf{Rationale:} The Gray World algorithm assumes that the average color in a scene should be neutral gray. While simple, it is effective for most photographs and requires no training or calibration.
+
+\subsubsection{Color Space Conversions}
+
+The module converts images to multiple color spaces for different purposes:
+
+\begin{itemize}
+    \item \textbf{RGB:} Input format, used for display
+    \item \textbf{CIELAB:} Used for ITA° calculation and color matching
+    \item \textbf{HSV:} Used for skin segmentation
+    \item \textbf{YCbCr:} Used for skin segmentation
+\end{itemize}
+
+\textbf{RGB to CIELAB Conversion:}
+\begin{enumerate}
+    \item Convert RGB to XYZ using standard transformation matrix
+    \item Normalize XYZ by reference white point (D65)
+    \item Apply nonlinear transformation:
+    \begin{equation}
+        f(t) = \begin{cases}
+            t^{1/3} & \text{if } t > (6/29)^3 \\
+            \frac{1}{3}(29/6)^2 t + 4/29 & \text{otherwise}
+        \end{cases}
+    \end{equation}
+    \item Calculate LAB values:
+    \begin{align}
+        L^* &= 116 \cdot f(Y/Y_n) - 16 \\
+        a^* &= 500 \cdot (f(X/X_n) - f(Y/Y_n)) \\
+        b^* &= 200 \cdot (f(Y/Y_n) - f(Z/Z_n))
+    \end{align}
+\end{enumerate}
+
+\subsection{Module 2: Face Detection}
+
+\subsubsection{Purpose}
+Face detection locates the face region in the image, which is essential for focusing analysis on facial skin rather than background or clothing.
+
+\subsubsection{Haar Cascade Classifier}
+
+ShadeAI uses OpenCV's pre-trained Haar Cascade classifier for face detection.
+
+\textbf{Algorithm:}
+\begin{enumerate}
+    \item Convert image to grayscale
+    \item Apply Haar Cascade classifier with parameters:
+    \begin{itemize}
+        \item scaleFactor = 1.1 (image pyramid scale)
+        \item minNeighbors = 5 (minimum detections for confirmation)
+        \item minSize = (30, 30) (minimum face size)
+    \end{itemize}
+    \item Select largest detected face (if multiple)
+    \item Extract face region with 10\% padding
+    \item Validate detection (minimum size, aspect ratio)
+\end{enumerate}
+
+\textbf{Advantages:}
+\begin{itemize}
+    \item Fast (real-time on CPU)
+    \item No training required
+    \item Robust to lighting variations
+    \item Available in OpenCV
+\end{itemize}
+
+\textbf{Limitations:}
+\begin{itemize}
+    \item Less accurate for non-frontal faces
+    \item May miss faces with occlusions
+    \item Lower accuracy than deep learning methods
+\end{itemize}
+
+\subsubsection{Fallback Mechanisms}
+
+If face detection fails:
+\begin{enumerate}
+    \item Try with relaxed parameters (minNeighbors = 3)
+    \item Use entire image if still no detection
+    \item Provide user feedback about photo quality
+\end{enumerate}
+
+\subsection{Module 3: Skin Segmentation}
+
+\subsubsection{Purpose}
+Skin segmentation identifies skin pixels within the face region, excluding eyes, eyebrows, mouth, hair, and background.
+
+\subsubsection{Rule-Based Segmentation}
+
+ShadeAI uses a combined HSV and YCbCr approach:
+
+\textbf{HSV Thresholds:}
+\begin{align}
+    0° &\leq H \leq 50° \\
+    0.2 &\leq S \leq 0.8 \\
+    0.3 &\leq V \leq 1.0
+\end{align}
+
+\textbf{YCbCr Thresholds:}
+\begin{align}
+    77 &\leq Cb \leq 127 \\
+    133 &\leq Cr \leq 173
+\end{align}
+
+\textbf{Algorithm:}
+\begin{enumerate}
+    \item Convert face region to HSV and YCbCr
+    \item Apply thresholds to create binary masks
+    \item Combine masks using logical AND
+    \item Apply morphological operations:
+    \begin{itemize}
+        \item Opening (erosion + dilation) to remove noise
+        \item Dilation to fill small gaps
+    \end{itemize}
+    \item Extract skin pixels using mask
+    \item Validate (minimum 1000 pixels)
+\end{enumerate}
+
+\textbf{Rationale:} Combining HSV and YCbCr provides robustness to lighting variations while maintaining accuracy. HSV separates chromaticity from intensity, while YCbCr is optimized for skin detection based on empirical research.
+
+\subsubsection{Morphological Operations}
+
+Morphological operations clean up the segmentation mask:
+
+\begin{itemize}
+    \item \textbf{Opening:} Removes small noise regions
+    \item \textbf{Dilation:} Fills small gaps and connects nearby regions
+    \item \textbf{Kernel Size:} 5×5 pixels (empirically determined)
+\end{itemize}
+
+\subsection{Module 4: Feature Extraction}
+
+\subsubsection{Purpose}
+Feature extraction computes quantitative measures of skin color that can be used for classification and matching.
+
+\subsubsection{ITA° Calculation}
+
+The Individual Typology Angle (ITA°) is calculated from CIELAB values:
+
+\begin{equation}
+ITA° = \arctan\left(\frac{L^* - 50}{b^*}\right) \times \frac{180}{\pi}
+\end{equation}
+
+where:
+\begin{itemize}
+    \item $L^*$ is the mean lightness of skin pixels
+    \item $b^*$ is the mean yellow-blue component
+\end{itemize}
+
+\textbf{Interpretation:}
+\begin{itemize}
+    \item Higher ITA° → Lighter skin tone
+    \item Lower ITA° → Darker skin tone
+    \item ITA° > 55° → Very fair (MST-01)
+    \item ITA° < -30° → Deep (MST-10)
+\end{itemize}
+
+\subsubsection{CIELAB Statistics}
+
+The module computes statistics for all three CIELAB components:
+
+\begin{align}
+    \bar{L^*} &= \frac{1}{N} \sum_{i=1}^{N} L_i^* \\
+    \bar{a^*} &= \frac{1}{N} \sum_{i=1}^{N} a_i^* \\
+    \bar{b^*} &= \frac{1}{N} \sum_{i=1}^{N} b_i^*
+\end{align}
+
+where $N$ is the number of skin pixels.
+
+These statistics are used for:
+\begin{itemize}
+    \item ITA° calculation (tone)
+    \item Undertone detection
+    \item Color matching with foundation shades
+\end{itemize}
+
+\subsection{Module 5: Classification}
+
+\subsubsection{MST Classification}
+
+Skin tone is classified into one of 10 MST classes using ITA° thresholds:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|l|c|}
+\hline
+\textbf{MST Class} & \textbf{Label} & \textbf{ITA° Range} \\
+\hline
+MST-01 & Porcelain & > 55° \\
+MST-02 & Fair & 41° to 55° \\
+MST-03 & Light & 28° to 41° \\
+MST-04 & Light-Medium & 19° to 28° \\
+MST-05 & Medium & 10° to 19° \\
+MST-06 & Medium-Dark & 0° to 10° \\
+MST-07 & Tan & -10° to 0° \\
+MST-08 & Brown & -20° to -10° \\
+MST-09 & Deep Brown & -30° to -20° \\
+MST-10 & Deep & < -30° \\
+\hline
+\end{tabular}
+\caption{ITA° Thresholds for MST Classification}
+\end{table}
+
+\textbf{Algorithm:}
+\begin{verbatim}
+if ITA > 55:
+    class = MST-01
+elif ITA > 41:
+    class = MST-02
+elif ITA > 28:
+    class = MST-03
+...
+else:
+    class = MST-10
+\end{verbatim}
+
+\subsubsection{Undertone Detection}
+
+Undertone is detected using heuristic rules based on CIELAB $a^*$ and $b^*$ values:
+
+\textbf{Algorithm:}
+\begin{enumerate}
+    \item Initialize score = 0
+    \item If $b^* > 15$: score += 0.4 (yellow → warm)
+    \item If $b^* < 10$: score -= 0.4 (blue → cool)
+    \item If $a^* > 12$: score += 0.3 (red → warm)
+    \item If $a^* < 8$: score -= 0.3 (pink → cool)
+    \item If ITA° > 28: score += 0.2 (lighter → warm)
+    \item If ITA° < 10: score -= 0.2 (darker → cool)
+    \item Clip score to [-1.0, 1.0]
+    \item Classify:
+    \begin{itemize}
+        \item score > 0.3 → Warm
+        \item score < -0.3 → Cool
+        \item otherwise → Neutral
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Rationale:} These heuristics are based on empirical observations and color theory. Warm undertones have higher yellow ($b^*$) and red ($a^*$) components, while cool undertones have lower values.
+
+\subsection{Module 6: Shade Recommendation}
+
+\subsubsection{Purpose}
+The shade recommendation module matches the detected skin tone to foundation shades in the database using CIEDE2000 color difference.
+
+\subsubsection{CIEDE2000 Implementation}
+
+CIEDE2000 is the industry-standard metric for color difference. The implementation follows the CIE specification:
+
+\textbf{Algorithm Steps:}
+\begin{enumerate}
+    \item Calculate chroma: $C = \sqrt{a^{*2} + b^{*2}}$
+    \item Compute $\bar{C}$ and apply G correction to $a^*$
+    \item Calculate hue angle: $h' = \arctan(b^*/a'^*)$
+    \item Compute differences: $\Delta L'$, $\Delta C'$, $\Delta H'$
+    \item Calculate weighting functions: $S_L$, $S_C$, $S_H$
+    \item Compute rotation term: $R_T$
+    \item Calculate final ΔE:
+    \begin{equation}
+        \Delta E_{00} = \sqrt{\left(\frac{\Delta L'}{S_L}\right)^2 + \left(\frac{\Delta C'}{S_C}\right)^2 + \left(\frac{\Delta H'}{S_H}\right)^2 + R_T \frac{\Delta C'}{S_C} \frac{\Delta H'}{S_H}}
+    \end{equation}
+\end{enumerate}
+
+\textbf{Interpretation:}
+\begin{itemize}
+    \item ΔE < 1.0: Imperceptible difference (perfect match)
+    \item ΔE < 2.0: Outstanding match
+    \item ΔE < 3.0: Excellent match (industry standard)
+    \item ΔE < 5.0: Good match (acceptable)
+    \item ΔE ≥ 5.0: Poor match (noticeable difference)
+\end{itemize}
+
+\subsubsection{Recommendation Algorithm}
+
+\textbf{Algorithm:}
+\begin{enumerate}
+    \item Load foundation database (187 shades)
+    \item For each shade:
+    \begin{itemize}
+        \item Calculate ΔE using CIEDE2000
+        \item Check undertone compatibility
+        \item Store result with metadata
+    \end{itemize}
+    \item Sort results:
+    \begin{itemize}
+        \item Primary: Undertone-compatible shades by ΔE
+        \item Secondary: Incompatible shades by ΔE
+    \end{itemize}
+    \item Return top 5 recommendations
+    \item Include for each:
+    \begin{itemize}
+        \item Brand and shade name
+        \item ΔE value
+        \item CIELAB values
+        \item Undertone
+        \item MST range
+        \item Match quality indicator
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Undertone Compatibility:}
+\begin{itemize}
+    \item Neutral undertone: Compatible with all shades
+    \item Warm/Cool: Prefer matching undertone
+    \item If insufficient matches: Include best non-matching
+\end{itemize}
+
+\section{Foundation Database}
+
+\subsection{Database Structure}
+
+The foundation database is stored in JSON format with the following structure:
+
+\begin{verbatim}
+[
+  {
+    "brand": "MAC",
+    "product": "Studio Fix Fluid",
+    "shade": "NC45",
+    "L": 46.2,
+    "a": 13.8,
+    "b": 21.2,
+    "undertone": "Warm",
+    "mst_range": "MST-08",
+    "hex": "#9B6B4F"
+  },
+  ...
+]
+\end{verbatim}
+
+\subsection{Database Coverage}
+
+The database includes 187 shades from 14 brands:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Brand} & \textbf{Shades} & \textbf{Percentage} \\
+\hline
+Fenty Beauty & 33 & 17.6\% \\
+MAC & 22 & 11.8\% \\
+Maybelline & 18 & 9.6\% \\
+Lancôme & 14 & 7.5\% \\
+NARS & 14 & 7.5\% \\
+Estée Lauder & 13 & 7.0\% \\
+L'Oréal & 15 & 8.0\% \\
+Black Opal & 11 & 5.9\% \\
+Bobbi Brown & 11 & 5.9\% \\
+Pat McGrath & 10 & 5.3\% \\
+Iman Cosmetics & 10 & 5.3\% \\
+Hourglass & 8 & 4.3\% \\
+Charlotte Tilbury & 8 & 4.3\% \\
+Others & 10 & 5.3\% \\
+\hline
+\textbf{Total} & \textbf{187} & \textbf{100\%} \\
+\hline
+\end{tabular}
+\caption{Foundation Database by Brand}
+\end{table}
+
+\subsection{MST Coverage}
+
+The database provides excellent coverage across all MST classes:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|l|c|c|}
+\hline
+\textbf{MST} & \textbf{Label} & \textbf{Shades} & \textbf{Percentage} \\
+\hline
+MST-01 & Porcelain & 23 & 12.3\% \\
+MST-02 & Fair & 24 & 12.8\% \\
+MST-03 & Light & 21 & 11.2\% \\
+MST-04 & Light-Medium & 17 & 9.1\% \\
+MST-05 & Medium & 23 & 12.3\% \\
+MST-06 & Medium-Dark & 36 & 19.3\% \\
+MST-07 & Tan & 31 & 16.6\% \\
+MST-08 & Brown & 27 & 14.4\% \\
+MST-09 & Deep Brown & 26 & 13.9\% \\
+MST-10 & Deep & 20 & 10.7\% \\
+\hline
+\textbf{Total} & & \textbf{187} & \textbf{100\%} \\
+\hline
+\end{tabular}
+\caption{Foundation Database by MST Class}
+\end{table}
+
+Notable features:
+\begin{itemize}
+    \item Excellent representation for deeper tones (MST-06 to MST-10: 140 shades, 74.9\%)
+    \item Balanced coverage across all classes
+    \item Multiple undertone options for each MST class
+\end{itemize}
+
+\section{Photo Quality Assessment}
+
+\subsection{Purpose}
+Photo quality significantly affects accuracy. The system includes real-time quality assessment to guide users toward better photos.
+
+\subsection{Quality Metrics}
+
+Six quality metrics are evaluated:
+
+\begin{enumerate}
+    \item \textbf{Brightness:}
+    \begin{itemize}
+        \item Measure: Mean pixel intensity
+        \item Optimal: 100-180
+        \item Issues: Too dark (< 80) or too bright (> 200)
+    \end{itemize}
+    
+    \item \textbf{Blur:}
+    \begin{itemize}
+        \item Measure: Laplacian variance
+        \item Optimal: > 100
+        \item Issues: Blurry image (< 100)
+    \end{itemize}
+    
+    \item \textbf{Color Cast:}
+    \begin{itemize}
+        \item Measure: RGB channel differences
+        \item Optimal: Balanced channels
+        \item Issues: Strong color cast (difference > 30)
+    \end{itemize}
+    
+    \item \textbf{Face Detection:}
+    \begin{itemize}
+        \item Measure: Face detection success
+        \item Optimal: Face detected with confidence > 0.8
+        \item Issues: No face or low confidence
+    \end{itemize}
+    
+    \item \textbf{Resolution:}
+    \begin{itemize}
+        \item Measure: Image dimensions
+        \item Optimal: > 640×480
+        \item Issues: Low resolution
+    \end{itemize}
+    
+    \item \textbf{Exposure:}
+    \begin{itemize}
+        \item Measure: Histogram distribution
+        \item Optimal: Well-distributed
+        \item Issues: Clipping or narrow range
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Quality Scoring}
+
+Overall quality score (0-100):
+\begin{equation}
+Score = 100 - \sum_{i=1}^{6} penalty_i
+\end{equation}
+
+where each metric contributes a penalty (0-25) based on severity.
+
+\textbf{Quality Levels:}
+\begin{itemize}
+    \item Excellent: Score ≥ 90
+    \item Good: Score ≥ 75
+    \item Fair: Score ≥ 60
+    \item Poor: Score < 60
+\end{itemize}
+
+\section{User Interfaces}
+
+\subsection{Command-Line Interface}
+
+The CLI provides a simple interface for batch processing and testing:
+
+\textbf{Usage:}
+\begin{verbatim}
+python shadeai_cli.py image.jpg
+\end{verbatim}
+
+\textbf{Output:}
+\begin{itemize}
+    \item Photo quality assessment
+    \item Skin tone classification (MST, ITA°)
+    \item Undertone detection
+    \item Top 5 shade recommendations with ΔE values
+    \item Processing time
+\end{itemize}
+
+\subsection{Web Application}
+
+The Streamlit web app provides an interactive interface:
+
+\textbf{Features:}
+\begin{itemize}
+    \item File upload or camera capture
+    \item Real-time quality feedback
+    \item Visual results with color swatches
+    \item Photo guidelines and examples
+    \item Downloadable results
+\end{itemize}
+
+\textbf{Technology:}
+\begin{itemize}
+    \item Framework: Streamlit
+    \item Backend: FastAPI
+    \item Communication: HTTP requests
+\end{itemize}
+
+\subsection{REST API}
+
+The FastAPI backend provides programmatic access:
+
+\textbf{Endpoint:}
+\begin{verbatim}
+POST /api/v1/analyze
+Content-Type: multipart/form-data
+Body: file (image)
+\end{verbatim}
+
+\textbf{Response:}
+\begin{verbatim}
+{
+  "skin_tone": {
+    "class": "MST-08",
+    "label": "Brown",
+    "ita": -15.79
+  },
+  "undertone": {
+    "label": "Neutral",
+    "score": 0.1
+  },
+  "recommendations": [
+    {
+      "brand": "MAC",
+      "shade": "NC45",
+      "delta_e": 2.489,
+      "undertone": "Warm"
+    },
+    ...
+  ]
+}
+\end{verbatim}
+
+\section{Deployment Options}
+
+\subsection{Local Deployment}
+
+\textbf{Requirements:}
+\begin{itemize}
+    \item Python 3.10+
+    \item Dependencies from requirements.txt
+    \item 2GB RAM minimum
+\end{itemize}
+
+\textbf{Steps:}
+\begin{verbatim}
+pip install -r requirements.txt
+python shadeai_cli.py image.jpg
+\end{verbatim}
+
+\subsection{Docker Deployment}
+
+\textbf{Advantages:}
+\begin{itemize}
+    \item Consistent environment
+    \item Easy deployment
+    \item Isolated dependencies
+\end{itemize}
+
+\textbf{Configuration:}
+\begin{verbatim}
+docker-compose up --build
+# Frontend: http://localhost:8501
+# Backend: http://localhost:8000
+\end{verbatim}
+
+\section{Summary}
+
+This chapter has described the complete system design and methodology for ShadeAI, including:
+
+\begin{itemize}
+    \item Six-stage processing pipeline
+    \item Detailed algorithms for each module
+    \item Foundation database structure and coverage
+    \item Photo quality assessment system
+    \item Multiple user interfaces
+    \item Deployment options
+\end{itemize}
+
+The design emphasizes modularity, accuracy, accessibility, and usability. The next chapter presents implementation details and experimental results demonstrating the system's performance.

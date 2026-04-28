@@ -1,0 +1,4 @@
+image_path,ground_truth_shade_id,notes
+test1.jpg,MAC-NC45,User's actual foundation shade
+test2.jpg,FENTY-385N,Professional color match
+test3.jpg,NARS-STROMBOLI,Self-reported match
