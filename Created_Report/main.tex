@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper]{aktu}
 \usepackage{times}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{titlesec}
 \usepackage{geometry}
 \usepackage{setspace}
@@ -16,13 +17,13 @@
 \usepackage{multirow}
 \usepackage{longtable}
 \usepackage{hyperref}
+\usepackage{enumitem}
 
 \geometry{total={210mm,297mm},
 left=3.5cm,right=2cm,
-top=3.5cm,bottom=2cm}
+top=3.5cm,bottom=2 cm}
 
 \usepackage{titletoc}
-\setsecheadstyle{\Large\bfseries}
 \titleformat{\chapter}[display]
   {\bigbigsize \bfseries \centering}{\MakeUppercase{\chaptertitlename}\ \thechapter}{40pt}{\bigsize\MakeUppercase }
 \titlespacing*{\chapter}{-10pt}{-20pt}{40pt}
@@ -35,7 +36,7 @@ top=3.5cm,bottom=2cm}
 \titleformat{\subsection}
 {\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}
-{\normalfont\normalsize\bfseries\textit}{\thesubsubsection}{1em}{}
+{\normalfont\normalsize\bfseries\itshape}{\thesubsubsection}{1em}{}
 \titleformat{\paragraph}[runin]
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titleformat{\subparagraph}[runin]
@@ -57,6 +58,7 @@ top=3.5cm,bottom=2cm}
 }
 
 \begin{document}
+%\doublespacing
 \setstretch{1.5}
 \pagenumbering{roman}
 \include{cover}
@@ -67,6 +69,7 @@ top=3.5cm,bottom=2cm}
 \pagestyle{plain}
 
 \doublespacing
+%\onehalfspacing
 \include{FT}
 \include{sa}
 \include{contents}
@@ -78,7 +81,6 @@ top=3.5cm,bottom=2cm}
 \include{chapter3}
 \include{chapter4}
 \include{chapter5}
-\include{chapter6}
 
 \addcontentsline{toc}{section}{\textbf{REFERENCES}} 
 \include{references}

@@ -2,13 +2,13 @@
 
 \section{Introduction to Skin Tone Detection}
 
-Skin tone detection and classification have been active areas of research in computer vision, dermatology, and cosmetics for several decades. The ability to accurately detect and classify skin tones has applications ranging from medical diagnosis to personalized product recommendations. This chapter reviews the existing literature, technologies, and methodologies related to skin tone detection, color science, and cosmetic recommendation systems.
+Researchers in computer vision, clinical dermatology, and cosmetic science have pursued automated skin-tone detection for over three decades. Reliable classification feeds into applications as varied as UV-exposure risk assessment, adaptive camera processing, bias auditing in facial recognition, and — central to this work — personalised cosmetic recommendation. This chapter surveys the classification systems, color-science foundations, algorithmic techniques, and commercial products that define the current landscape, then pinpoints the gaps ShadeAI is designed to fill.
 
 \section{Skin Tone Classification Systems}
 
 \subsection{Fitzpatrick Skin Type Scale}
 
-The Fitzpatrick scale, developed by dermatologist Thomas B. Fitzpatrick in 1975, is one of the most widely used skin classification systems in dermatology. It categorizes skin into six types (I-VI) based on response to UV radiation:
+Dermatologist Thomas B.\ Fitzpatrick introduced his six-type scale in 1975 to predict a patient's sunburn-and-tanning response. The categories run from Type~I (very fair, always burns) through Type~VI (dark brown to black, never burns):
 
 \begin{itemize}
     \item Type I: Very fair, always burns, never tans
@@ -19,11 +19,11 @@ The Fitzpatrick scale, developed by dermatologist Thomas B. Fitzpatrick in 1975,
     \item Type VI: Dark brown to black, never burns, tans very easily
 \end{itemize}
 
-While useful for dermatological purposes, the Fitzpatrick scale has significant limitations for cosmetic applications. It was developed primarily for Caucasian skin and does not adequately represent the full spectrum of human skin tones, particularly deeper tones. The scale's focus on UV response rather than visual appearance makes it less suitable for foundation matching.
+For clinical UV work the scale remains serviceable, but its shortcomings in a cosmetic context are well documented. It was calibrated predominantly on Caucasian populations, compressing the enormous variety among darker skin tones into a single bin (Type~VI). Because it classifies by photoreactivity rather than visual appearance, two individuals who look markedly different may land in the same Fitzpatrick type — rendering the scale nearly useless for shade matching.
 
 \subsection{Monk Skin Tone Scale}
 
-The Monk Skin Tone (MST) scale, developed by Dr. Ellis Monk at Harvard University, addresses the limitations of traditional classification systems. Published in 2019 and adopted by major technology companies including Google, the MST scale provides a more inclusive 10-class system:
+Dr.\ Ellis Monk at Harvard University developed the Monk Skin Tone (MST) scale specifically to address these representation failures. Published in 2019 and subsequently adopted by Google for fairness benchmarking, MST expands coverage to ten classes:
 
 \begin{table}[h]
 \centering
@@ -46,27 +46,27 @@ MST-10 & Deep & Deep/ebony \\
 \caption{Monk Skin Tone Scale Classification}
 \end{table}
 
-The MST scale provides better representation for deeper skin tones, with four classes (MST-07 to MST-10) dedicated to brown and deep skin tones compared to only one or two in traditional systems. This makes it particularly suitable for cosmetic applications where accurate shade matching across the full spectrum is essential.
+Four of those ten bins (MST-07 through MST-10) are dedicated to brown and deep complexions — a four-fold increase in granularity over Fitzpatrick's single dark category. That finer resolution maps naturally onto cosmetic product lines, where adjacent shades may differ by only a few $\Delta E$ units.
 
 \subsection{Individual Typology Angle (ITA°)}
 
-The Individual Typology Angle (ITA°) is a quantitative measure of skin tone based on CIELAB color space values. Introduced by Chardon et al. (1991), ITA° is calculated using the formula:
+Chardon et al.\ (1991) proposed ITA° as a continuous, device-independent metric for skin lightness. It is computed from CIELAB coordinates:
 
 \begin{equation}
 ITA° = \arctan\left(\frac{L^* - 50}{b^*}\right) \times \frac{180}{\pi}
 \end{equation}
 
-where $L^*$ is the lightness component and $b^*$ is the yellow-blue component in CIELAB color space. ITA° provides a continuous measure that can be mapped to discrete classification systems. Research has established threshold ranges for different skin tone categories, making it a valuable tool for automated classification.
+where $L^*$ captures lightness and $b^*$ captures the yellow–blue axis. High ITA° values indicate very fair skin; strongly negative values correspond to the deepest tones. Because ITA° is a scalar derived from perceptually grounded coordinates, it bridges the gap between continuous colour measurement and discrete classification — a threshold lookup can map it directly onto MST classes.
 
 \section{Color Science and Color Spaces}
 
 \subsection{RGB Color Space}
 
-RGB (Red, Green, Blue) is the most common color space for digital images, representing colors as combinations of red, green, and blue light. While intuitive and widely used, RGB is device-dependent and not perceptually uniform, meaning that equal numerical differences do not correspond to equal perceived color differences. This limitation makes RGB unsuitable for accurate color matching applications.
+Digital cameras natively produce RGB (Red, Green, Blue) triplets. The space is intuitive and ubiquitous, yet it suffers from two fundamental drawbacks for skin analysis. First, it is device-dependent: the same scene yields different RGB values on different sensors. Second, it is perceptually non-uniform — a ten-unit shift in the red channel may be imperceptible in one region of the gamut yet glaringly obvious in another. These properties disqualify raw RGB from any reliable colour-matching pipeline.
 
 \subsection{CIELAB Color Space}
 
-The CIELAB color space, developed by the Commission Internationale de l'Éclairage (CIE) in 1976, is designed to be perceptually uniform and device-independent. It consists of three components:
+The Commission Internationale de l'Éclairage defined CIELAB in 1976 to remedy exactly those problems. Three orthogonal axes encode colour:
 
 \begin{itemize}
     \item $L^*$: Lightness (0 = black, 100 = white)
@@ -74,30 +74,30 @@ The CIELAB color space, developed by the Commission Internationale de l'Éclaira
     \item $b^*$: Yellow-blue axis (negative = blue, positive = yellow)
 \end{itemize}
 
-CIELAB is particularly valuable for skin tone analysis because:
+CIELAB suits skin-tone work for several reasons:
 \begin{enumerate}
-    \item It separates lightness from chromaticity, allowing independent analysis of tone and undertone
-    \item It is perceptually uniform, meaning numerical differences correspond to perceived differences
-    \item It is device-independent, providing consistent results across different cameras and displays
-    \item It forms the basis for industry-standard color difference metrics
+    \item Lightness and chromaticity are separable, so tone and undertone can be analyzed independently
+    \item Distances in the space approximate perceived differences — a property called perceptual uniformity
+    \item Measurements are device-independent once the illuminant white-point is fixed
+    \item The space underpins industry-standard colour-difference formulas, including CIEDE2000
 \end{enumerate}
 
 \subsection{HSV and YCbCr Color Spaces}
 
-HSV (Hue, Saturation, Value) and YCbCr (Luma, Blue-difference, Red-difference) color spaces are commonly used for skin detection in computer vision applications. Research has shown that skin pixels cluster in specific regions of these color spaces, enabling rule-based segmentation:
+Empirical studies have long noted that skin pixels cluster tightly in HSV (Hue, Saturation, Value) and YCbCr (Luma, Blue-difference, Red-difference) spaces, far more compactly than in RGB. Typical skin regions satisfy:
 
 \begin{itemize}
     \item HSV: Skin typically has hue values between 0-50° and saturation between 0.2-0.6
     \item YCbCr: Skin pixels satisfy conditions like $77 \leq Cb \leq 127$ and $133 \leq Cr \leq 173$
 \end{itemize}
 
-These color spaces are particularly effective for skin segmentation because they separate chromaticity from luminance, making them robust to lighting variations.
+Both representations decouple luminance from chrominance, which makes the thresholds robust across a wide range of indoor and outdoor lighting conditions — a decisive advantage for rule-based segmentation.
 
 \subsection{Color Difference Metrics}
 
 \subsubsection{CIEDE2000}
 
-CIEDE2000 is the current industry standard for measuring color difference, published by CIE in 2000. It improves upon earlier metrics (ΔE*ab, ΔE*94) by incorporating:
+CIEDE2000 superseded earlier CIE delta-E formulas ($\Delta E^*_{ab}$, $\Delta E^*_{94}$) in the year 2000. It incorporates several perceptual corrections absent from its predecessors:
 
 \begin{itemize}
     \item Weighting functions for lightness, chroma, and hue
@@ -106,45 +106,45 @@ CIEDE2000 is the current industry standard for measuring color difference, publi
     \item Perceptual uniformity corrections
 \end{itemize}
 
-The CIEDE2000 formula is complex but provides the most accurate measure of perceived color difference. A ΔE value below 1.0 is considered imperceptible, below 2.0 is excellent, and below 3.0 is acceptable for most applications. Research in cosmetics typically targets ΔE < 3.0 for foundation matching.
+The formula is algebraically involved, but the practical interpretation is straightforward. A $\Delta E$ below 1.0 is invisible to a trained observer; below 2.0 qualifies as outstanding; below 3.0 is the accepted threshold for professional cosmetic matching. Published shade-matching research typically targets $\Delta E < 3.0$, and commercial tools rarely quantify their error at all.
 
 \section{Computer Vision Techniques}
 
 \subsection{Face Detection}
 
-Face detection is a critical first step in skin tone analysis. Several approaches have been developed:
+Isolating the face is the indispensable first step — without it, background pixels, clothing, and hair contaminate the colour statistics.
 
 \subsubsection{Haar Cascade Classifiers}
 
-Introduced by Viola and Jones (2001), Haar Cascade classifiers use machine learning to detect faces based on Haar-like features. The method is:
+Viola and Jones (2001) popularized Haar-feature cascades, which remain among the fastest face detectors available:
 \begin{itemize}
-    \item Fast and efficient (real-time performance on CPU)
-    \item Robust to variations in pose and lighting
-    \item Available in OpenCV with pre-trained models
-    \item Suitable for frontal face detection
+    \item Real-time throughput on a single CPU core
+    \item Tolerance to moderate pose and lighting variation
+    \item Pre-trained models bundled with OpenCV
+    \item Strong accuracy on frontal and near-frontal faces
 \end{itemize}
 
-Limitations include reduced accuracy for non-frontal faces and sensitivity to occlusions.
+The main weaknesses are degraded recall on profile views and sensitivity to heavy occlusion (sunglasses, scarves).
 
 \subsubsection{Multi-task Cascaded Convolutional Networks (MTCNN)}
 
-MTCNN, proposed by Zhang et al. (2016), uses deep learning for joint face detection and alignment. It provides:
+Zhang et al.\ (2016) introduced MTCNN, a three-stage deep detector that jointly localises faces and predicts five facial landmarks:
 \begin{itemize}
-    \item Higher accuracy than Haar Cascades
-    \item Facial landmark detection
-    \item Better handling of various poses and expressions
-    \item Confidence scores for detections
+    \item Substantially higher recall than Haar cascades on challenging poses
+    \item Landmark output enables alignment and region-of-interest refinement
+    \item Robust to expression, partial occlusion, and scale variation
+    \item Confidence scores accompany every detection
 \end{itemize}
 
-However, MTCNN requires more computational resources and may need GPU acceleration for real-time performance.
+The trade-off is cost: MTCNN demands considerably more compute and may need GPU acceleration to hit real-time frame rates.
 
 \subsection{Skin Segmentation}
 
-Skin segmentation aims to identify skin pixels in an image, separating them from background, hair, eyes, and other non-skin regions.
+Once the face bounding box is known, the next task is to separate skin pixels from non-skin regions — eyes, brows, lips, and any visible background.
 
 \subsubsection{Rule-Based Methods}
 
-Rule-based methods use color space thresholds to identify skin pixels. Common approaches include:
+Threshold-driven approaches exploit the tight chromatic clustering of skin:
 
 \begin{itemize}
     \item HSV thresholding: $0° \leq H \leq 50°$, $0.2 \leq S \leq 0.6$
@@ -152,11 +152,11 @@ Rule-based methods use color space thresholds to identify skin pixels. Common ap
     \item Combined methods using multiple color spaces
 \end{itemize}
 
-Advantages include simplicity, speed, and no training requirement. Limitations include sensitivity to lighting and difficulty handling diverse skin tones.
+The appeal is obvious: zero training, minimal latency, and no data dependency. The flip side is brittleness under extreme lighting and reduced precision across the full skin-tone gamut.
 
 \subsubsection{Machine Learning Methods}
 
-Machine learning approaches train classifiers on labeled skin/non-skin pixels:
+Learned classifiers model the skin–non-skin boundary from labelled pixel samples:
 
 \begin{itemize}
     \item Gaussian Mixture Models (GMM)
@@ -165,11 +165,11 @@ Machine learning approaches train classifiers on labeled skin/non-skin pixels:
     \item Neural Networks
 \end{itemize}
 
-These methods can achieve higher accuracy but require training data and more computational resources.
+Accuracy climbs relative to hand-crafted thresholds, but the models require curated training sets and incur higher inference cost.
 
 \subsubsection{Deep Learning Methods}
 
-Deep learning approaches, particularly U-Net and its variants, have achieved state-of-the-art results in skin segmentation:
+Fully convolutional architectures set the current accuracy bar for pixel-level skin parsing:
 
 \begin{itemize}
     \item U-Net: Encoder-decoder architecture with skip connections
@@ -177,37 +177,35 @@ Deep learning approaches, particularly U-Net and its variants, have achieved sta
     \item DeepLab: Uses atrous convolution for multi-scale features
 \end{itemize}
 
-Deep learning methods provide the highest accuracy but require large annotated datasets, GPU hardware, and longer training times.
+These networks achieve the tightest masks, yet they demand large annotated corpora, GPU training, and longer iteration cycles — resources that put them out of reach for lightweight or rapid-deployment scenarios.
 
 \section{Existing Skin Tone Detection Systems}
 
 \subsection{Academic Research}
 
-Several academic papers have addressed skin tone detection and classification:
-
 \subsubsection{Deep Learning Approaches}
 
-Recent research has focused on deep learning methods:
+Several recent studies lean heavily on convolutional architectures:
 
 \begin{itemize}
-    \item \textbf{EfficientNet-based Classification:} Researchers have used EfficientNet architectures for MST classification, achieving 92-94\% accuracy on test sets. However, these methods require thousands of annotated images and GPU training.
+    \item \textbf{EfficientNet-based Classification:} Fine-tuned EfficientNet variants report 92–94\% top-1 accuracy on MST-labelled test sets, but they need thousands of annotated face crops and GPU-hours for training.
     
-    \item \textbf{CNN + SVM Hybrid:} Some studies combine CNN feature extraction with SVM classification, reporting ΔE values around 3.0-3.5 for foundation matching.
+    \item \textbf{CNN + SVM Hybrid:} A two-stage pipeline extracts CNN features then feeds them to an SVM head. Published $\Delta E$ values hover around 3.0–3.5 for foundation matching — acceptable but not impressive.
     
-    \item \textbf{ResNet-based Systems:} ResNet architectures have been applied to skin tone classification with reported accuracies of 88-90\% on Fitzpatrick scale classification.
+    \item \textbf{ResNet-based Systems:} ResNet-50 backbones have achieved 88–90\% accuracy on the six-class Fitzpatrick scale, though the coarser taxonomy inflates reported accuracy.
 \end{itemize}
 
-Common limitations include:
+Across the board, shared weaknesses emerge:
 \begin{itemize}
-    \item High computational requirements
-    \item Need for large annotated datasets
-    \item Limited foundation databases (typically 50-80 shades)
-    \item Lack of production-ready implementations
+    \item Steep computational demands
+    \item Hunger for large, expertly annotated datasets
+    \item Shade databases rarely exceeding 50–80 entries
+    \item No published deployable front-end or API
 \end{itemize}
 
 \subsubsection{Traditional Computer Vision Approaches}
 
-Classical computer vision methods have also been explored:
+Classical pipelines have also been explored, typically combining:
 
 \begin{itemize}
     \item ITA°-based classification achieving 85-90\% accuracy
@@ -215,100 +213,96 @@ Classical computer vision methods have also been explored:
     \item Color histogram analysis for undertone detection
 \end{itemize}
 
-These methods are faster and require no training but may have lower accuracy for challenging cases.
+They are faster and training-free, but published results show accuracy dips on heavily shadowed or very dark-toned images.
 
 \subsection{Commercial Systems}
 
-Several companies have developed skin tone detection systems:
-
 \subsubsection{L'Oréal Shade Finder}
 
-L'Oréal's mobile app uses AI to analyze selfies and recommend foundation shades. Features include:
+L'Oréal's mobile app analyses a selfie and maps it to the brand's product catalogue:
 \begin{itemize}
     \item Real-time camera analysis
     \item Integration with product catalog
     \item Virtual try-on capabilities
 \end{itemize}
 
-Technical details are proprietary, but the system likely uses deep learning models trained on extensive datasets.
+No public documentation describes the model architecture or training data; the technology is entirely proprietary.
 
 \subsubsection{Sephora Virtual Artist}
 
-Sephora's app provides virtual makeup try-on and shade matching:
+Sephora's AR-based tool focuses on visual engagement:
 \begin{itemize}
     \item Augmented reality overlay
     \item Multiple product categories
     \item Integration with e-commerce
 \end{itemize}
 
-The system focuses on user experience and visual appeal rather than color accuracy.
+Anecdotal user reports suggest the emphasis is on visual appeal rather than colorimetric precision.
 
 \subsubsection{Perfect Corp. YouCam Makeup}
 
-YouCam Makeup offers comprehensive virtual beauty features:
+YouCam Makeup bundles a broad feature set:
 \begin{itemize}
     \item Real-time face tracking
     \item Multiple makeup products
     \item Skin analysis features
 \end{itemize}
 
-The system uses proprietary AI models and extensive product databases.
+Like its competitors, the system relies on undisclosed proprietary models and does not publish quantitative $\Delta E$ benchmarks.
 
 \subsection{Limitations of Existing Systems}
 
-Current systems, both academic and commercial, have several limitations:
+Synthesising the academic and commercial landscape reveals a recurring set of shortcomings:
 
 \begin{enumerate}
-    \item \textbf{Accuracy:} Many systems achieve ΔE values of 3.0-5.0, which is acceptable but not excellent. Deeper skin tones often have higher errors.
+    \item \textbf{Accuracy:} Reported $\Delta E$ values cluster between 3.0 and 5.0 — passable but far from imperceptible. Deeper tones consistently score worse.
     
-    \item \textbf{Accessibility:} Deep learning systems require expensive GPU hardware and are not accessible to individual developers or small businesses.
+    \item \textbf{Accessibility:} Deep-learning pipelines presuppose GPU hardware and ML expertise, locking out solo developers and small-scale beauty brands.
     
-    \item \textbf{Training Data:} Most systems require thousands of annotated images, which are expensive and time-consuming to collect.
+    \item \textbf{Training Data:} Supervised methods depend on thousands of labelled images — expensive to collect and fraught with annotation inconsistency.
     
-    \item \textbf{Database Coverage:} Foundation databases are often limited to 50-100 shades, with inadequate representation of deeper tones.
+    \item \textbf{Database Coverage:} Most shade databases cap at 50–100 entries and under-represent MST-07 through MST-10.
     
-    \item \textbf{Production Readiness:} Academic prototypes often lack user-friendly interfaces, documentation, and deployment options.
+    \item \textbf{Production Readiness:} Academic codebases rarely ship with a user-facing interface, deployment guide, or automated quality gate.
     
-    \item \textbf{Inclusivity:} Many systems use outdated classification scales (Fitzpatrick) that do not adequately represent diverse skin tones.
+    \item \textbf{Inclusivity:} A surprising number of systems still default to the six-bin Fitzpatrick taxonomy, forfeiting the granularity needed for accurate deep-tone matching.
 \end{enumerate}
 
 \section{Research Gap and Opportunity}
 
-Based on the literature review, several gaps and opportunities have been identified:
-
 \subsection{Gaps in Current Research}
 
 \begin{enumerate}
-    \item \textbf{Accessibility Gap:} Most high-accuracy systems require GPU hardware and extensive training, making them inaccessible to many users.
+    \item \textbf{Accessibility Gap:} High-accuracy systems overwhelmingly require GPU hardware and large-scale training, shutting out resource-constrained developers.
     
-    \item \textbf{Database Gap:} Existing foundation databases are limited in size and diversity, particularly for deeper skin tones.
+    \item \textbf{Database Gap:} Existing shade catalogues are thin and skewed light. Deeper MST classes are chronically under-represented.
     
-    \item \textbf{Implementation Gap:} Few research papers provide production-ready implementations with user-friendly interfaces.
+    \item \textbf{Implementation Gap:} The distance from a notebook prototype to a production endpoint remains vast; almost no published work closes it.
     
-    \item \textbf{Inclusivity Gap:} Many systems still use outdated classification scales that do not adequately represent diverse populations.
+    \item \textbf{Inclusivity Gap:} Fitzpatrick persists as the default classification backbone despite well-known coverage deficiencies.
     
-    \item \textbf{Documentation Gap:} Academic papers often lack comprehensive documentation and reproducible code.
+    \item \textbf{Documentation Gap:} Reproducibility suffers because papers seldom release comprehensive code, data, or configuration details.
 \end{enumerate}
 
 \subsection{Opportunities for Innovation}
 
 \begin{enumerate}
-    \item \textbf{Classical Methods:} Combining well-established computer vision and color science techniques can achieve excellent results without requiring training data or GPU hardware.
+    \item \textbf{Classical Methods:} A carefully engineered pipeline of white-balance correction, dual-space segmentation, ITA° classification, and CIEDE2000 matching can rival deep-learning accuracy — without the infrastructure overhead.
     
-    \item \textbf{Comprehensive Database:} Building a large, diverse foundation database with accurate CIELAB values can significantly improve matching accuracy.
+    \item \textbf{Comprehensive Database:} Curating 180+ shades with lab-grade CIELAB coordinates, undertone tags, and MST-range metadata directly tightens $\Delta E$.
     
-    \item \textbf{Inclusive Classification:} Adopting the Monk Skin Tone scale provides better representation and aligns with industry trends toward inclusivity.
+    \item \textbf{Inclusive Classification:} Anchoring on the Monk scale aligns the system with the industry's broader push toward equitable representation.
     
-    \item \textbf{Production-Ready System:} Developing a complete system with multiple interfaces (CLI, Web, API) and comprehensive documentation fills a significant gap.
+    \item \textbf{Production-Ready System:} Shipping CLI, web, and API interfaces alongside full documentation bridges the prototype-to-product chasm.
     
-    \item \textbf{Open Source:} Making the system open source enables community contributions, improvements, and wider adoption.
+    \item \textbf{Open Source:} Releasing the system publicly invites community scrutiny, contributions, and downstream adoption.
 \end{enumerate}
 
 \section{Theoretical Foundation}
 
 \subsection{Color Perception and Matching}
 
-Human color perception is complex and influenced by multiple factors:
+Human colour perception is shaped by several interacting factors:
 
 \begin{itemize}
     \item \textbf{Lighting:} The same object appears different under different illuminants (metamerism)
@@ -317,15 +311,15 @@ Human color perception is complex and influenced by multiple factors:
     \item \textbf{Context:} Expectations and context influence color judgment
 \end{itemize}
 
-For foundation matching, the goal is to minimize the perceived color difference between the foundation and skin under typical viewing conditions (daylight, indoor lighting). CIEDE2000 provides the best mathematical model of perceived color difference, making it the appropriate metric for this application.
+Foundation matching aims to minimise the perceived gap between product and skin under typical viewing illuminants — daylight and warm indoor light. CIEDE2000 is the best available mathematical proxy for that perceptual gap, which is why it serves as the ranking metric in ShadeAI.
 
 \subsection{White Balance and Color Constancy}
 
-Digital cameras capture images under various lighting conditions, which can significantly affect color appearance. White balance correction aims to remove color casts and make colors appear as they would under neutral illumination. The Gray World algorithm, used in ShadeAI, assumes that the average color in an image should be neutral gray. While simple, it is effective for most photographs and requires no training or calibration.
+Camera sensors record the scene illuminant alongside the subject, injecting a colour cast that can shift extracted skin coordinates by several CIELAB units. White-balance algorithms attempt to subtract this cast. The Gray World assumption — that the spatial average of a natural scene should be achromatic — is one of the oldest and simplest normalisations. It requires no calibration target, no training, and runs in constant time per pixel. For the controlled-lighting conditions typical of selfies, it proves surprisingly effective.
 
 \subsection{Skin Tone and Undertone}
 
-Skin tone refers to the overall lightness or darkness of skin, while undertone refers to the underlying hue:
+Tone describes how light or dark the skin appears; undertone captures the hue that shows through:
 
 \begin{itemize}
     \item \textbf{Warm Undertone:} Yellow, golden, or peachy hues (high $b^*$ in CIELAB)
@@ -333,18 +327,18 @@ Skin tone refers to the overall lightness or darkness of skin, while undertone r
     \item \textbf{Neutral Undertone:} Balanced mix of warm and cool
 \end{itemize}
 
-Matching both tone and undertone is essential for natural-looking foundation. A foundation that matches in lightness but has the wrong undertone will appear unnatural.
+Getting the tone right but the undertone wrong produces the telltale "mask effect" — the foundation sits visibly on top of the skin rather than blending in. Any effective matching system must account for both dimensions.
 
 \section{Summary}
 
-This literature review has examined the current state of research and technology in skin tone detection, color science, and cosmetic recommendation systems. Key findings include:
+This chapter has surveyed classification systems, colour-science fundamentals, algorithmic approaches, and existing products to establish the terrain ShadeAI occupies. Five key takeaways anchor the design decisions in the chapters that follow:
 
 \begin{enumerate}
-    \item The Monk Skin Tone scale provides a more inclusive classification system than traditional scales
-    \item CIELAB color space and CIEDE2000 metrics are essential for accurate color matching
-    \item Both classical computer vision and deep learning approaches have been explored, each with advantages and limitations
-    \item Existing systems have gaps in accessibility, database coverage, and production readiness
-    \item There is an opportunity to develop a practical system that achieves research-grade accuracy using classical methods
+    \item The Monk Skin Tone scale offers meaningfully finer granularity than the Fitzpatrick scale, particularly for darker complexions
+    \item CIELAB coordinates and the CIEDE2000 metric furnish the perceptual backbone needed for sub-3.0 $\Delta E$ matching
+    \item Both classical and deep-learning pipelines have demonstrated viability, each with clear trade-offs in accuracy, cost, and deployment readiness
+    \item Existing systems — academic and commercial alike — leave significant gaps in accessibility, database breadth, and production maturity
+    \item A classical pipeline paired with a comprehensive shade database can, in principle, close those gaps without demanding GPU resources or labelled training data
 \end{enumerate}
 
-The next chapter describes the system design and methodology for ShadeAI, which addresses these gaps and leverages the theoretical foundations established in this review.
+The next chapter translates these observations into a concrete system architecture and algorithmic methodology.

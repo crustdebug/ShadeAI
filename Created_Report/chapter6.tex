@@ -113,7 +113,7 @@ print(f"Undertone: {result['undertone']['label']}")
 
 # Get recommendations
 for rec in result['recommendations']:
-    print(f"{rec['brand']} {rec['shade']}: ΔE={rec['delta_e']}")
+    print(f"{rec['brand']} {rec['shade']}: Delta E={rec['delta_e']}")
 \end{verbatim}
 
 \subsection{Web Application}
@@ -227,8 +227,8 @@ Documentation & Guides, reports & 2 weeks \\
 Test Images & 7 \\
 MST Classes Covered & 7 (MST-03 to MST-09) \\
 Total Recommendations & 35 \\
-Perfect Matches (ΔE < 1.0) & 4 (57.1\%) \\
-Excellent Matches (ΔE < 3.0) & 6 (85.7\%) \\
+Perfect Matches ($\Delta E$ < 1.0) & 4 (57.1\%) \\
+Excellent Matches ($\Delta E$ < 3.0) & 6 (85.7\%) \\
 Success Rate & 100\% \\
 Average Processing Time & 753.9 ms \\
 \hline
@@ -238,16 +238,16 @@ Average Processing Time & 753.9 ms \\
 
 \section{Acknowledgments}
 
-This project would not have been possible without:
+This project would not have reached its current form without the contributions and prior work of:
 
 \begin{itemize}
-    \item \textbf{Dr. Ellis Monk} for developing the inclusive Monk Skin Tone scale
-    \item \textbf{OpenCV Community} for excellent computer vision libraries
-    \item \textbf{CIE} for standardizing color science and CIEDE2000
-    \item \textbf{Cosmetic Brands} for product information and shade data
-    \item \textbf{Open Source Community} for tools and frameworks
-    \item \textbf{Research Community} for published papers and methodologies
-    \item \textbf{Test Participants} for providing diverse test images
+    \item \textbf{Dr.\ Ellis Monk} for designing the inclusive Monk Skin Tone scale that anchors our classification
+    \item \textbf{OpenCV Community} for maintaining the computer-vision toolkit at the heart of the pipeline
+    \item \textbf{CIE} for standardising colour science and publishing the CIEDE2000 specification
+    \item \textbf{Cosmetic Brands} whose public product data made the shade database possible
+    \item \textbf{Open-Source Community} for the frameworks and libraries that accelerated development
+    \item \textbf{Research Community} for the published studies that informed algorithmic choices
+    \item \textbf{Test Participants} who provided the diverse photographs used in evaluation
 \end{itemize}
 
 \section{Contact Information}

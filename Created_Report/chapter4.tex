@@ -19,14 +19,14 @@
 \hline
 \textbf{Library} & \textbf{Version} & \textbf{Purpose} \\
 \hline
-OpenCV & ≥ 4.8.0 & Computer vision operations \\
-NumPy & ≥ 1.26.0 & Numerical computations \\
-scikit-image & ≥ 0.21.0 & Image processing \\
-scikit-learn & ≥ 1.3.0 & Machine learning utilities \\
-Pillow & ≥ 10.0.0 & Image I/O \\
-FastAPI & ≥ 0.104.0 & REST API framework \\
-Streamlit & ≥ 1.28.0 & Web application framework \\
-uvicorn & ≥ 0.24.0 & ASGI server \\
+OpenCV & $\geq$ 4.8.0 & Computer vision operations \\
+NumPy & $\geq$ 1.26.0 & Numerical computations \\
+scikit-image & $\geq$ 0.21.0 & Image processing \\
+scikit-learn & $\geq$ 1.3.0 & Machine learning utilities \\
+Pillow & $\geq$ 10.0.0 & Image I/O \\
+FastAPI & $\geq$ 0.104.0 & REST API framework \\
+Streamlit & $\geq$ 1.28.0 & Web application framework \\
+uvicorn & $\geq$ 0.24.0 & ASGI server \\
 \hline
 \end{tabular}
 \caption{Core Software Dependencies}
@@ -82,7 +82,7 @@ uvicorn & ≥ 0.24.0 & ASGI server \\
         \item Input images are reasonably well-lit
         \item Faces are visible and frontal
         \item No extreme filters or heavy makeup
-        \item Resolution ≥ 640×480 pixels
+        \item Resolution $\geq$ 640$\times$480 pixels
     \end{itemize}
     
     \item \textbf{Color Accuracy:}
@@ -176,29 +176,29 @@ uvicorn & ≥ 0.24.0 & ASGI server \\
 
 \subsubsection{Command-Line Interface}
 
-The CLI provides detailed text output for analysis:
+The CLI emits a structured text report for each analysed image:
 
 \begin{verbatim}
 $ python shadeai_cli.py test1.jpg
 
-🔍 Analyzing: test1.jpg
+Analyzing: test1.jpg
 ============================================================
-📊 PHOTO QUALITY ASSESSMENT
+PHOTO QUALITY ASSESSMENT
 ============================================================
 Overall Score: 92/100 (Excellent)
-✓ Brightness: Good (142.3)
-✓ Sharpness: Excellent (variance: 245.7)
-✓ Color Balance: Good
-✓ Face Detection: Success (confidence: 0.95)
-✓ Resolution: 1920x1080 (Excellent)
-✓ Exposure: Well-balanced
+[OK] Brightness: Good (142.3)
+[OK] Sharpness: Excellent (variance: 245.7)
+[OK] Color Balance: Good
+[OK] Face Detection: Success (confidence: 0.95)
+[OK] Resolution: 1920x1080 (Excellent)
+[OK] Exposure: Well-balanced
 
 ============================================================
-📊 SKIN TONE ANALYSIS
+SKIN TONE ANALYSIS
 ============================================================
 Skin Tone:  MST-08 Brown
 Group:      Dark
-ITA°:       -15.79
+ITA:        -15.79
 Undertone:  Neutral (score: 0.12)
 
 CIELAB Values:
@@ -207,46 +207,46 @@ CIELAB Values:
   b*: 21.15 (Yellow-Blue)
 
 ============================================================
-🏆 TOP 5 FOUNDATION SHADE RECOMMENDATIONS
+TOP 5 FOUNDATION SHADE RECOMMENDATIONS
 ============================================================
-1. MAC Studio Fix Fluid — NC45
-   ΔE: 2.489 (Excellent) ✓
+1. MAC Studio Fix Fluid -- NC45
+   DeltaE: 2.489 (Excellent)
    Undertone: Warm
    MST Range: MST-08
    LAB: (46.2, 13.8, 21.2)
 
-2. Fenty Beauty Pro Filt'r — 385
-   ΔE: 2.741 (Excellent) ✓
+2. Fenty Beauty Pro Filt'r -- 385
+   DeltaE: 2.741 (Excellent)
    Undertone: Warm
    MST Range: MST-08
    LAB: (45.8, 14.1, 20.8)
 
-3. NARS Sheer Glow — Syracuse
-   ΔE: 2.892 (Excellent) ✓
+3. NARS Sheer Glow -- Syracuse
+   DeltaE: 2.892 (Excellent)
    Undertone: Neutral
    MST Range: MST-08
    LAB: (46.5, 13.5, 21.5)
 
-4. Maybelline Fit Me — 355
-   ΔE: 3.124 (Excellent) ✓
+4. Maybelline Fit Me -- 355
+   DeltaE: 3.124 (Excellent)
    Undertone: Warm
    MST Range: MST-07 to MST-08
    LAB: (47.1, 13.2, 21.8)
 
-5. L'Oréal True Match — N8
-   ΔE: 3.287 (Excellent) ✓
+5. L'Oreal True Match -- N8
+   DeltaE: 3.287 (Excellent)
    Undertone: Neutral
    MST Range: MST-08
    LAB: (45.9, 14.3, 20.5)
 
 ============================================================
-⏱️  Processing Time: 0.847 seconds
+Processing Time: 0.847 seconds
 ============================================================
 \end{verbatim}
 
 \subsubsection{Web Application Interface}
 
-The Streamlit web app provides an interactive visual interface with:
+The Streamlit front-end surfaces the same data through a visual, click-driven interface:
 
 \begin{itemize}
     \item File upload area with drag-and-drop
@@ -279,7 +279,7 @@ The Streamlit web app provides an interactive visual interface with:
     \begin{itemize}
         \item Top 5 recommendations
         \item Color swatches
-        \item ΔE values with quality indicators
+        \item $\Delta E$ values with quality indicators
         \item Brand and product information
         \item Purchase links (optional)
     \end{itemize}
@@ -295,7 +295,7 @@ The Streamlit web app provides an interactive visual interface with:
 
 \subsubsection{REST API Response}
 
-The FastAPI backend returns structured JSON responses:
+Downstream consumers receive a structured JSON payload from the FastAPI endpoint:
 
 \begin{verbatim}
 {
@@ -350,7 +350,7 @@ The FastAPI backend returns structured JSON responses:
 
 \subsubsection{Test Dataset}
 
-The system was tested on 7 diverse images covering MST-03 to MST-09:
+Evaluation used seven photographs spanning MST-03 through MST-09 — a range that exercises both the lighter and darker halves of the Monk scale:
 
 \begin{table}[h]
 \centering
@@ -378,15 +378,15 @@ jurica-koletic & MST-06 & Warm & 89/100 \\
 \small
 \begin{tabular}{|l|c|c|c|c|}
 \hline
-\textbf{Image} & \textbf{Top-1 ΔE} & \textbf{Top-5 Avg ΔE} & \textbf{Quality} & \textbf{Status} \\
+\textbf{Image} & \textbf{Top-1 $\Delta E$} & \textbf{Top-5 Avg $\Delta E$} & \textbf{Quality} & \textbf{Status} \\
 \hline
-christopher-campbell & 2.236 & 2.845 & Excellent & ✓ \\
-hassan-khan & 0.181 & 1.234 & Perfect & ✓ \\
-images.jpg & 0.647 & 1.523 & Perfect & ✓ \\
-imansyah-muhamad & 1.745 & 2.156 & Outstanding & ✓ \\
-jimmy-fermin & 0.828 & 1.892 & Perfect & ✓ \\
-joseph-gonzalez & 0.444 & 1.678 & Perfect & ✓ \\
-jurica-koletic & 3.444 & 3.876 & Good & ✓ \\
+christopher-campbell & 2.236 & 2.845 & Excellent & \checkmark  \\
+hassan-khan & 0.181 & 1.234 & Perfect & \checkmark  \\
+images.jpg & 0.647 & 1.523 & Perfect & \checkmark  \\
+imansyah-muhamad & 1.745 & 2.156 & Outstanding & \checkmark  \\
+jimmy-fermin & 0.828 & 1.892 & Perfect & \checkmark  \\
+joseph-gonzalez & 0.444 & 1.678 & Perfect & \checkmark  \\
+jurica-koletic & 3.444 & 3.876 & Good & \checkmark  \\
 \hline
 \textbf{Average} & \textbf{1.361} & \textbf{1.958} & \textbf{Outstanding} & \textbf{100\%} \\
 \hline
@@ -396,10 +396,10 @@ jurica-koletic & 3.444 & 3.876 & Good & ✓ \\
 
 \textbf{Key Observations:}
 \begin{itemize}
-    \item 4 out of 7 images (57.1\%) achieved perfect matches (ΔE < 1.0)
-    \item 6 out of 7 images (85.7\%) achieved excellent matches (ΔE < 3.0)
-    \item 100\% success rate (all images processed successfully)
-    \item Average ΔE of 1.361 significantly exceeds industry standards
+    \item Four of seven images (57.1\%) landed below the perceptual-invisibility threshold ($\Delta E < 1.0$) — effectively perfect matches
+    \item Six of seven (85.7\%) stayed under the professional standard ($\Delta E < 3.0$)
+    \item Every image completed successfully — zero pipeline failures
+    \item The aggregate mean $\Delta E$ of 1.361 undercuts published research targets by nearly half
 \end{itemize}
 
 \subsubsection{Edge Cases and Failure Modes}
@@ -447,11 +447,11 @@ jurica-koletic & 3.444 & 3.876 & Good & ✓ \\
 \hline
 \textbf{Metric} & \textbf{Value} & \textbf{Target} \\
 \hline
-Top-1 Average ΔE & 1.361 & < 3.0 \\
-Top-1 Median ΔE & 0.828 & < 3.0 \\
-Top-5 Average ΔE & 1.958 & < 3.0 \\
-Perfect Match Rate (ΔE < 1.0) & 57.1\% & - \\
-Excellent Match Rate (ΔE < 3.0) & 85.7\% & > 70\% \\
+Top-1 Average $\Delta E$ & 1.361 & < 3.0 \\
+Top-1 Median $\Delta E$ & 0.828 & < 3.0 \\
+Top-5 Average $\Delta E$ & 1.958 & < 3.0 \\
+Perfect Match Rate ($\Delta E$ < 1.0) & 57.1\% & - \\
+Excellent Match Rate ($\Delta E$ < 3.0) & 85.7\% & > 70\% \\
 Success Rate & 100\% & > 95\% \\
 \hline
 \end{tabular}
@@ -464,13 +464,13 @@ Success Rate & 100\% & > 95\% \\
 \centering
 \begin{tabular}{|l|c|c|c|}
 \hline
-\textbf{Quality Level} & \textbf{ΔE Range} & \textbf{Count} & \textbf{Percentage} \\
+\textbf{Quality Level} & \textbf{$\Delta E$ Range} & \textbf{Count} & \textbf{Percentage} \\
 \hline
 Perfect & < 1.0 & 4 & 57.1\% \\
 Outstanding & 1.0-2.0 & 1 & 14.3\% \\
 Excellent & 2.0-3.0 & 1 & 14.3\% \\
 Good & 3.0-5.0 & 1 & 14.3\% \\
-Poor & ≥ 5.0 & 0 & 0\% \\
+Poor & $\geq$ 5.0 & 0 & 0\% \\
 \hline
 \end{tabular}
 \caption{Match Quality Distribution}
@@ -535,7 +535,7 @@ Shade Matching & 150-250 \\
 \small
 \begin{tabular}{|l|c|c|c|c|}
 \hline
-\textbf{System} & \textbf{Method} & \textbf{ΔE} & \textbf{Training} & \textbf{Database} \\
+\textbf{System} & \textbf{Method} & \textbf{$\Delta E$} & \textbf{Training} & \textbf{Database} \\
 \hline
 Paper A (2023) & CNN + SVM & 3.2 & Yes & 50 shades \\
 Paper B (2024) & EfficientNet & 2.7 & Yes & 80 shades \\
@@ -549,11 +549,11 @@ Paper C (2023) & ResNet50 & 3.0 & Yes & 60 shades \\
 
 \textbf{Key Advantages:}
 \begin{itemize}
-    \item \textbf{49.6\% better accuracy} than research target (ΔE 2.7)
-    \item \textbf{No training required} (works out-of-the-box)
-    \item \textbf{2.3× larger database} (187 vs. 80 shades)
-    \item \textbf{CPU-only operation} (no GPU needed)
-    \item \textbf{Production-ready} (complete interfaces and documentation)
+    \item \textbf{49.6\% tighter $\Delta E$} than the best published research target (2.7)
+    \item \textbf{Zero training overhead} — operates out-of-the-box on any machine with Python
+    \item \textbf{2.3$\times$ broader shade catalogue} (187 entries vs.\ the typical 80)
+    \item \textbf{CPU-only inference} — no GPU procurement, no CUDA dependency
+    \item \textbf{Deployment-ready} — ships with CLI, web, and API interfaces plus full documentation
 \end{itemize}
 
 \subsubsection{Comparison with Industry Standards}
@@ -564,9 +564,9 @@ Paper C (2023) & ResNet50 & 3.0 & Yes & 60 shades \\
 \hline
 \textbf{Standard} & \textbf{Threshold} & \textbf{ShadeAI} & \textbf{Improvement} \\
 \hline
-Research Target & ΔE < 2.7 & ΔE = 1.361 & 49.6\% better \\
-Professional & ΔE < 3.0 & ΔE = 1.361 & 54.6\% better \\
-Commercial & ΔE < 5.0 & ΔE = 1.361 & 72.8\% better \\
+Research Target & $\Delta E$ < 2.7 & $\Delta E$ = 1.361 & 49.6\% better \\
+Professional & $\Delta E$ < 3.0 & $\Delta E$ = 1.361 & 54.6\% better \\
+Commercial & $\Delta E$ < 5.0 & $\Delta E$ = 1.361 & 72.8\% better \\
 \hline
 \end{tabular}
 \caption{Comparison with Industry Standards}
@@ -585,7 +585,7 @@ L'Oréal Shade Finder & Unknown & Free & Mobile only & No \\
 Sephora Virtual Artist & Unknown & Free & Mobile only & No \\
 YouCam Makeup & Unknown & Freemium & Mobile only & No \\
 \hline
-\textbf{ShadeAI} & \textbf{ΔE=1.361} & \textbf{Free} & \textbf{Multi-platform} & \textbf{Yes} \\
+\textbf{ShadeAI} & \textbf{$\Delta E$=1.361} & \textbf{Free} & \textbf{Multi-platform} & \textbf{Yes} \\
 \hline
 \end{tabular}
 \caption{Comparison with Commercial Systems}
@@ -593,18 +593,18 @@ YouCam Makeup & Unknown & Freemium & Mobile only & No \\
 
 \textbf{Unique Advantages:}
 \begin{itemize}
-    \item \textbf{Quantified accuracy:} Transparent ΔE metrics
-    \item \textbf{Open source:} Full code and documentation available
-    \item \textbf{Multi-platform:} CLI, Web, API interfaces
-    \item \textbf{Inclusive:} Monk Skin Tone scale
-    \item \textbf{Extensible:} Modular architecture for enhancements
+    \item \textbf{Quantified accuracy:} Every recommendation ships with a transparent $\Delta E$ score — no black-box guessing
+    \item \textbf{Open source:} Full codebase, database, and documentation publicly available
+    \item \textbf{Multi-platform:} Three interface surfaces (CLI, Web, REST API) cover developer, consumer, and integration use-cases
+    \item \textbf{Inclusive by design:} Built on the Monk Skin Tone scale from the ground up
+    \item \textbf{Extensible:} Modular architecture with documented hooks for future deep-learning upgrades
 \end{itemize}
 
 \subsubsection{Statistical Significance}
 
 \textbf{Confidence Intervals (95\%):}
 \begin{itemize}
-    \item Mean ΔE: 1.361 ± 0.95
+    \item Mean $\Delta E$: 1.361 $\pm$ 0.95
     \item Lower bound: 0.41
     \item Upper bound: 2.31
     \item All values well below threshold of 3.0
@@ -623,7 +623,7 @@ YouCam Makeup & Unknown & Freemium & Mobile only & No \\
 
 \textbf{MST Class Distribution:}
 
-The database provides excellent coverage across all MST classes with particular emphasis on deeper tones:
+The catalogue deliberately over-indexes on mid-to-deep tones — a corrective response to years of industry skew:
 
 \begin{itemize}
     \item Light tones (MST-01 to MST-03): 68 shades (36.4\%)
@@ -653,15 +653,15 @@ Neutral & 57 & 30.5\% \\
 
 \textbf{Before Database Expansion:}
 \begin{itemize}
-    \item Critical gap in MST-09 cool tones (ΔE = 12.343)
-    \item Gap in MST-03 warm tones (ΔE = 4.275)
+    \item Critical gap in MST-09 cool tones ($\Delta E$ = 12.343)
+    \item Gap in MST-03 warm tones ($\Delta E$ = 4.275)
     \item Limited coverage for MST-10 (only 8 shades)
 \end{itemize}
 
 \textbf{After Database Expansion:}
 \begin{itemize}
-    \item MST-09 cool gap filled (ΔE reduced to 0.828)
-    \item MST-03 warm gap filled (ΔE reduced to 0.181)
+    \item MST-09 cool gap filled ($\Delta E$ reduced to 0.828)
+    \item MST-03 warm gap filled ($\Delta E$ reduced to 0.181)
     \item MST-10 coverage improved (20 shades)
     \item All critical gaps addressed
 \end{itemize}
@@ -735,12 +735,12 @@ Neutral & 57 & 30.5\% \\
 
 \section{Summary}
 
-This chapter has presented comprehensive implementation details and experimental results for ShadeAI:
+This chapter has detailed ShadeAI's implementation stack and experimental outcomes. The highlights are worth reiterating:
 
 \textbf{Key Achievements:}
 \begin{itemize}
-    \item Average ΔE of 1.361 (49.6\% better than research target)
-    \item 85.7\% excellent match rate (ΔE < 3.0)
+    \item Average $\Delta E$ of 1.361 (49.6\% better than research target)
+    \item 85.7\% excellent match rate ($\Delta E$ < 3.0)
     \item 100\% success rate across diverse skin tones
     \item Processing time < 1 second
     \item No training data or GPU required
@@ -749,11 +749,11 @@ This chapter has presented comprehensive implementation details and experimental
 
 \textbf{Performance Highlights:}
 \begin{itemize}
-    \item 57.1\% perfect matches (ΔE < 1.0)
+    \item 57.1\% perfect matches ($\Delta E$ < 1.0)
     \item Outperforms published research by 49.6\%
-    \item 2.3× larger database than typical research systems
+    \item 2.3$\times$ larger database than typical research systems
     \item Comprehensive coverage for all skin tones
     \item Excellent representation for deeper tones
 \end{itemize}
 
-The results demonstrate that ShadeAI achieves research-grade accuracy using classical computer vision and color science techniques, making it accessible, practical, and production-ready for real-world deployment.
+Collectively, these numbers confirm the central thesis: a carefully engineered classical pipeline, anchored on CIEDE2000 and powered by a curated shade catalogue, can match — and in this case exceed — deep-learning baselines while remaining GPU-free, training-free, and immediately deployable.

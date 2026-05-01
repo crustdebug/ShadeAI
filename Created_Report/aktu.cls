@@ -94,4 +94,16 @@
 \def\abstract{\section*{\size ABSTRACT}\small\def\baselinestretch{1}\@normalsize}
 \def\endabstract{\par}
 
+\def\abstractpage{
+\begin{center}{\large{\bf \@title} \\
+\@author 
+\\[\baselineskip]}
+\par
+\def\baselinestretch{1}\@normalsize
+\end{center}
+\par
+\begin{abstract}}
+
+\newcounter{savepage}
+
 \endinput

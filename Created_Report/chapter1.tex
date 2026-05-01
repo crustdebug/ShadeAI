@@ -2,111 +2,111 @@
 
 \section{Problem Statement}
 
-The beauty and cosmetics industry faces a persistent challenge in providing accurate foundation shade recommendations for diverse skin tones. Traditional methods of shade matching rely heavily on subjective visual assessment by beauty consultants or customers themselves, leading to several critical problems:
+Matching a customer's skin to the right foundation shade has plagued the beauty industry for decades. Conventional approaches lean almost entirely on a consultant's eye — or worse, the buyer's own guesswork — and the results are predictably uneven:
 
 \begin{itemize}
-    \item \textbf{Inconsistent Matching:} Visual assessment varies significantly based on lighting conditions, individual perception, and experience, resulting in inconsistent and often inaccurate shade recommendations.
+    \item \textbf{Inconsistent Matching:} A store's fluorescent ceiling panels, a window's afternoon glare, even a consultant's personal color bias — any of these can push a recommendation off. The same customer may walk out with a different shade on two different visits.
     
-    \item \textbf{Limited Accessibility:} In-store shade matching requires physical presence and expert assistance, which is not accessible to online shoppers or customers in remote locations.
+    \item \textbf{Limited Accessibility:} Shade matching has traditionally demanded a physical trip to a counter staffed by a trained associate. That model shuts out anyone shopping online, living outside metropolitan areas, or simply unwilling to endure the ritual.
     
-    \item \textbf{Inadequate Representation:} Historical shade ranges have been limited, particularly for deeper skin tones, leading to poor representation and customer dissatisfaction among diverse populations.
+    \item \textbf{Inadequate Representation:} Brands have historically skewed their ranges toward lighter complexions. Deeper skin tones — particularly those beyond the mid-range of the Fitzpatrick scale — are routinely underserved, leaving large customer segments with few or no viable options.
     
-    \item \textbf{Time and Cost:} The trial-and-error process of finding the right shade is time-consuming and expensive, with customers often purchasing multiple products before finding a suitable match.
+    \item \textbf{Time and Cost:} Finding the right shade often becomes an expensive guessing game. Customers buy, test, return, and repeat — burning money and patience across multiple purchases before landing on anything close to a match.
     
-    \item \textbf{Lack of Standardization:} Different brands use inconsistent naming conventions and classification systems, making it difficult for customers to find equivalent shades across brands.
+    \item \textbf{Lack of Standardization:} Every brand invents its own naming scheme. "Ivory" at one label bears no guaranteed resemblance to "Ivory" at another, so cross-brand comparison becomes a minefield.
     
-    \item \textbf{Subjective Undertone Detection:} Identifying skin undertones (warm, cool, neutral) is particularly challenging and often leads to mismatches even when the shade depth is correct.
+    \item \textbf{Subjective Undertone Detection:} Nailing the depth is only half the equation. Undertone — warm, cool, or neutral — is notoriously hard to judge by eye, and a misstep here produces that unmistakable "mask-like" mismatch.
 \end{itemize}
 
-These challenges are exacerbated in the digital age, where e-commerce has become the primary shopping channel for many consumers. Without the ability to physically test products, customers rely on product descriptions, reviews, and guesswork, leading to high return rates and customer dissatisfaction.
+The shift to online commerce has sharpened every one of these pain points. Shoppers ordering from a screen cannot swatch a product on their jawline; they rely on photos, reviews, and hope. Return rates in online cosmetics remain stubbornly high as a direct consequence.
 
 \vspace{0.5cm}
 
-The problem is further complicated by the lack of inclusive and standardized skin tone classification systems. Traditional systems like the Fitzpatrick scale, developed primarily for dermatological purposes, have only 6 categories and do not adequately represent the full spectrum of human skin tones. This limitation has perpetuated inequities in the beauty industry, with many brands historically offering limited options for deeper skin tones.
+Classification itself adds another layer of difficulty. The Fitzpatrick scale — originally designed to predict UV response, not cosmetic matching — compresses all of human pigmentation into six bins. That coarseness perpetuates blind spots: brands calibrated to such a narrow taxonomy naturally under-serve darker complexions.
 
 \vspace{0.5cm}
 
-Recent research has attempted to address these challenges using artificial intelligence and computer vision techniques. However, existing solutions face their own limitations:
+Several AI-driven prototypes have surfaced in recent literature, yet each carries non-trivial trade-offs:
 
 \begin{itemize}
-    \item High computational requirements necessitating expensive GPU hardware
-    \item Need for large annotated datasets for training deep learning models
-    \item Limited accuracy, particularly for deeper skin tones
-    \item Lack of production-ready implementations with user-friendly interfaces
-    \item Insufficient foundation shade databases covering diverse brands and ranges
+    \item Steep computational overhead that mandates dedicated GPU infrastructure
+    \item Dependence on massive, manually annotated training corpora
+    \item Accuracy that degrades noticeably on darker skin tones
+    \item Research-only codebases with no deployable front-end
+    \item Shade databases too shallow to span the product lines customers actually encounter
 \end{itemize}
 
-There is a clear need for an accessible, accurate, and inclusive AI-based solution that can analyze skin tone from photographs and provide personalized foundation shade recommendations without requiring extensive computational resources or training data.
+What remains missing is a lightweight, inclusive pipeline — one that can ingest a single photograph, extract perceptually grounded color features, and return reliable shade recommendations without demanding a GPU cluster or a labeled dataset.
 
 \section{Motivation}
 
-The motivation for developing ShadeAI stems from multiple converging factors in technology, society, and the beauty industry:
+ShadeAI grew out of a convergence: maturing open-source vision toolkits, a long-overdue industry reckoning with shade inclusivity, and the explosion of online beauty retail. Each factor reinforced the others.
 
 \subsection{Technological Advancement}
 
-Recent advances in computer vision, color science, and machine learning have made it feasible to develop accurate skin tone detection systems. The availability of open-source libraries like OpenCV, scikit-learn, and modern web frameworks enables the creation of production-ready applications without requiring extensive resources. The maturity of color difference metrics like CIEDE2000, which closely matches human color perception, provides a scientific foundation for accurate shade matching.
+Open-source ecosystems — OpenCV for image manipulation, scikit-learn for lightweight classification, Streamlit and FastAPI for rapid front-end and API scaffolding — have lowered the engineering barrier dramatically. Equally important, colorimetry has matured. CIEDE2000, the current gold-standard color-difference formula, models human perceptual non-uniformities with enough fidelity to anchor a shade-matching engine on solid psychophysical ground.
 
 \subsection{Social Equity and Inclusion}
 
-The beauty industry has historically underserved customers with deeper skin tones, leading to a lack of representation and limited product options. The introduction of the Monk Skin Tone (MST) scale by Dr. Ellis Monk provides a more inclusive 10-class classification system that better represents the full spectrum of human skin tones. Developing technology that leverages this inclusive scale contributes to greater equity in the beauty industry and addresses long-standing gaps in product offerings and recommendations.
+For years the cosmetics market treated darker complexions as an afterthought — fewer SKUs, narrower undertone coverage, minimal R\&D attention. Dr.\ Ellis Monk's ten-class Monk Skin Tone (MST) scale was designed explicitly to correct that imbalance. Building a recommendation system around MST does more than improve accuracy; it encodes equity into the algorithm's own classification backbone.
 
 \subsection{E-commerce Growth}
 
-The rapid growth of online shopping, accelerated by the COVID-19 pandemic, has created an urgent need for virtual beauty consultation tools. Customers shopping online cannot physically test products, leading to uncertainty and high return rates. An AI-based recommendation system can bridge this gap, providing personalized recommendations based on uploaded photographs and improving the online shopping experience.
+Online cosmetics revenue has surged — a trajectory the pandemic only steepened. But digital storefronts strip away the one feedback loop shoppers historically relied on: swatching the product on their own skin. A vision-based recommendation layer can close that gap, turning a phone-camera selfie into a reliable proxy for an in-store consultation.
 
 \subsection{Industry Demand}
 
-Major cosmetic brands are increasingly investing in AI and augmented reality technologies to enhance customer experience. Virtual try-on tools, personalized recommendations, and skin analysis applications are becoming standard features in beauty apps and e-commerce platforms. There is significant industry demand for accurate, scalable, and production-ready skin tone detection systems that can be integrated into existing platforms.
+Beauty conglomerates are already pouring capital into virtual try-on and AR mirror features. What many still lack, however, is a reliable perception back-end — the colorimetric engine that decides which shade to overlay. A modular, API-ready detection system slots directly into that gap.
 
 \subsection{Research Gap}
 
-While academic research has explored various approaches to skin tone detection and classification, there is a gap between research prototypes and production-ready systems. Many published solutions require extensive training data, expensive GPU hardware, or lack comprehensive foundation databases. There is an opportunity to develop a practical system that achieves research-grade accuracy using classical computer vision and color science techniques, making it accessible to a broader audience.
+Published literature demonstrates that high-accuracy skin classification is achievable, yet almost none of those prototypes ship with a usable interface, a real shade database, or sub-second inference on commodity hardware. The gap between a Jupyter notebook and a production endpoint is wide — and largely unaddressed.
 
 \subsection{Personal Experience}
 
-The project team's personal experiences with the challenges of finding suitable foundation shades, particularly for diverse skin tones, provided direct motivation. Witnessing friends and family members struggle with shade matching, waste money on unsuitable products, and experience frustration with limited options highlighted the real-world impact of this problem and the potential value of an effective solution.
+On a more personal note, every member of the project team has watched friends or relatives cycle through half a dozen foundations before finding anything wearable. That shared frustration — tangible, recurring, and unnecessary — anchored the project in a problem none of us had to imagine.
 
 \subsection{Academic and Professional Development}
 
-From an educational perspective, this project provides an excellent opportunity to apply knowledge from multiple domains including computer vision, machine learning, color science, software engineering, and user interface design. The project's practical nature and real-world applicability make it an ideal capstone project that demonstrates the ability to solve complex problems using AI and engineering principles.
+Academically, the project sits at the intersection of perception science, classical vision algorithms, full-stack engineering, and UX design. Few capstone scopes exercise that many disciplines simultaneously while also yielding a deployable product.
 
 \section{Project Objectives}
 
-The primary objectives of the ShadeAI project are:
+ShadeAI targets a clear set of measurable goals, split into primary deliverables and supporting objectives.
 
 \subsection{Primary Objectives}
 
 \begin{enumerate}
     \item \textbf{Develop an Accurate Skin Tone Detection System:}
     \begin{itemize}
-        \item Implement a robust pipeline for analyzing facial photographs
-        \item Achieve color difference (ΔE) below 3.0 for foundation recommendations
-        \item Support the inclusive 10-class Monk Skin Tone (MST) scale
-        \item Detect skin undertones (warm, cool, neutral) accurately
+        \item Build a resilient image-analysis pipeline capable of handling varied lighting and camera conditions
+        \item Hold recommended-shade color difference ($\Delta E$) below 3.0 — the perceptual threshold for a "good" match
+        \item Classify skin against the full 10-class Monk Skin Tone scale
+        \item Identify undertone (warm, cool, neutral) with heuristic-based confidence scoring
     \end{itemize}
     
     \item \textbf{Create a Comprehensive Foundation Database:}
     \begin{itemize}
-        \item Compile shade information from major cosmetic brands
-        \item Include CIELAB color values for accurate color matching
-        \item Ensure representation across all MST classes
-        \item Provide metadata including undertones and MST ranges
+        \item Aggregate shade catalogues from at least a dozen major cosmetic labels
+        \item Store each shade's CIELAB coordinates for perceptually grounded matching
+        \item Guarantee coverage across every MST class, especially the historically under-represented darker bins
+        \item Attach structured metadata — undertone tags, MST range compatibility, product URLs
     \end{itemize}
     
     \item \textbf{Implement Production-Ready Interfaces:}
     \begin{itemize}
-        \item Command-line interface for batch processing and testing
-        \item Web application for interactive user experience
-        \item RESTful API for integration with other applications
-        \item Real-time photo quality assessment and feedback
+        \item CLI entry point for scripted batch runs and automated testing
+        \item Streamlit-based web front-end for interactive, guided usage
+        \item FastAPI REST endpoint returning JSON payloads for third-party integration
+        \item Built-in photo-quality gate that flags blur, under-exposure, or color-cast before analysis proceeds
     \end{itemize}
     
     \item \textbf{Achieve Research-Grade Performance:}
     \begin{itemize}
-        \item Match or exceed published research accuracy benchmarks
-        \item Process images in under 1 second
-        \item Work without requiring training data or GPU hardware
-        \item Demonstrate reliability across diverse skin tones
+        \item Meet or surpass published $\Delta E$ benchmarks (target: below 2.7)
+        \item Complete end-to-end inference in under one second on a mid-range laptop CPU
+        \item Operate in a zero-shot fashion — no training corpus, no fine-tuning
+        \item Validate robustness across the full MST spectrum, not just lighter tones
     \end{itemize}
 \end{enumerate}
 
@@ -115,34 +115,34 @@ The primary objectives of the ShadeAI project are:
 \begin{enumerate}
     \item \textbf{Ensure Accessibility and Usability:}
     \begin{itemize}
-        \item Design intuitive user interfaces for non-technical users
-        \item Provide clear instructions and photo guidelines
-        \item Offer helpful feedback on photo quality
-        \item Support multiple deployment options (local, cloud, Docker)
+        \item Craft interfaces legible to users with zero technical background
+        \item Ship embedded photo-capture guidelines so users know what "good input" looks like
+        \item Surface actionable quality warnings (e.g., "image too dark — retake near a window")
+        \item Package the system for local install, cloud deployment, and containerized (Docker) orchestration
     \end{itemize}
     
     \item \textbf{Promote Inclusivity:}
     \begin{itemize}
-        \item Use the inclusive Monk Skin Tone scale
-        \item Ensure excellent coverage for deeper skin tones
-        \item Avoid bias in algorithms and recommendations
-        \item Provide diverse example images and test cases
+        \item Anchor all classification on the MST scale — no fallback to Fitzpatrick
+        \item Audit the shade database to confirm deep-tone coverage is proportional, not token
+        \item Stress-test the pipeline on MST-07 through MST-10 inputs specifically
+        \item Ship sample images spanning the full pigmentation range so testers cannot default to light-skin-only benchmarks
     \end{itemize}
     
     \item \textbf{Enable Future Enhancements:}
     \begin{itemize}
-        \item Design modular architecture for easy extension
-        \item Document code and algorithms thoroughly
-        \item Provide pathways for deep learning integration
-        \item Support database expansion and updates
+        \item Structure the codebase into swappable modules (detection, segmentation, matching) behind clean interfaces
+        \item Maintain docstrings and inline commentary at a level where a new contributor can onboard within a day
+        \item Expose hooks for a future CNN-based segmentation model to replace the rule-based path
+        \item Keep the shade database in a flat JSON schema that non-developers can extend
     \end{itemize}
     
     \item \textbf{Demonstrate Best Practices:}
     \begin{itemize}
-        \item Follow software engineering principles
-        \item Implement comprehensive testing and validation
-        \item Provide detailed documentation
-        \item Use version control and collaborative development
+        \item Adhere to SOLID design principles and PEP-8 formatting conventions
+        \item Cover critical paths with unit and integration tests
+        \item Deliver a self-contained documentation site alongside the source
+        \item Track all changes in Git with descriptive, atomic commits
     \end{itemize}
 \end{enumerate}
 
@@ -150,82 +150,81 @@ The primary objectives of the ShadeAI project are:
 
 \subsection{In Scope}
 
-The ShadeAI project encompasses the following features and functionalities:
+The current release of ShadeAI targets the feature set below. Each capability is fully implemented, tested, and documented.
 
 \begin{enumerate}
     \item \textbf{Image Processing Pipeline:}
     \begin{itemize}
-        \item Automatic white balance correction using Gray World algorithm
-        \item Color space conversions (RGB, CIELAB, HSV, YCbCr)
-        \item Image quality assessment and validation
-        \item Support for common image formats (JPEG, PNG)
+        \item White-balance normalization via the Gray World assumption
+        \item On-the-fly conversion across RGB, CIELAB, HSV, and YCbCr spaces
+        \item Six-metric quality gate (brightness, blur, color cast, face presence, resolution, exposure)
+        \item JPEG and PNG ingestion out of the box
     \end{itemize}
     
     \item \textbf{Face Detection:}
     \begin{itemize}
-        \item Haar Cascade classifier for face detection
-        \item Fallback mechanisms for challenging images
-        \item Face region extraction and validation
+        \item Primary detector: OpenCV Haar Cascade (frontal face)
+        \item Graceful fallback path when the primary cascade yields no hits
+        \item Bounding-box extraction followed by geometric sanity checks
     \end{itemize}
     
     \item \textbf{Skin Segmentation:}
     \begin{itemize}
-        \item Rule-based segmentation using HSV and YCbCr color spaces
-        \item Morphological operations for noise reduction
-        \item Skin pixel extraction and validation
+        \item Dual-space thresholding (HSV + YCbCr) for robust skin-pixel isolation
+        \item Morphological opening and closing to suppress speckle noise
+        \item Pixel-count validation to reject frames with insufficient skin area
     \end{itemize}
     
     \item \textbf{Feature Extraction:}
     \begin{itemize}
-        \item Individual Typology Angle (ITA°) calculation
-        \item CIELAB color statistics (mean L*, a*, b*)
-        \item Color distribution analysis
+        \item ITA° computation from mean $L^*$ and $b^*$ of the segmented region
+        \item First-order CIELAB statistics: mean, standard deviation, and range of $L^*$, $a^*$, $b^*$
+        \item Histogram-level distribution profiling for outlier detection
     \end{itemize}
     
     \item \textbf{Classification:}
     \begin{itemize}
-        \item 10-class Monk Skin Tone (MST) classification
-        \item ITA°-based threshold classification
-        \item Undertone detection (warm, cool, neutral)
-        \item Confidence scoring
+        \item Ten-bin MST assignment driven by calibrated ITA° thresholds
+        \item Undertone inference via $a^*$/$b^*$ ratio heuristics
+        \item Per-prediction confidence score reflecting feature-space margin to the nearest class boundary
     \end{itemize}
     
     \item \textbf{Shade Recommendation:}
     \begin{itemize}
-        \item CIEDE2000 color difference calculation
-        \item Top-5 foundation shade recommendations
-        \item Undertone compatibility filtering
-        \item Brand and product information
+        \item CIEDE2000-based ranking of every shade in the database against the user's extracted CIELAB vector
+        \item Top-five results returned, sorted by ascending $\Delta E_{00}$
+        \item Optional undertone filter to suppress cross-undertone suggestions
+        \item Each result annotated with brand, product line, shade name, and purchase link where available
     \end{itemize}
     
     \item \textbf{Foundation Database:}
     \begin{itemize}
-        \item 187 foundation shades from 14 brands
-        \item CIELAB color values for each shade
-        \item Undertone and MST range metadata
-        \item JSON format for easy updates
+        \item 187 shades spanning 14 brands — from drugstore to prestige tier
+        \item Lab-measured CIELAB triplets for each entry
+        \item Undertone tag and MST-range compatibility baked into every record
+        \item Flat JSON schema; new shades can be appended without touching application code
     \end{itemize}
     
     \item \textbf{User Interfaces:}
     \begin{itemize}
-        \item Command-line interface with detailed output
-        \item Streamlit web application with interactive features
-        \item FastAPI REST API with JSON responses
-        \item Photo quality checker with real-time feedback
+        \item CLI that dumps full analysis (MST class, CIELAB stats, top-five shades) to stdout
+        \item Streamlit app with drag-and-drop upload, live preview, and expandable result cards
+        \item FastAPI endpoint returning structured JSON — ready for downstream services
+        \item Integrated quality checker that runs before analysis and warns on suboptimal input
     \end{itemize}
     
     \item \textbf{Documentation:}
     \begin{itemize}
-        \item Comprehensive README and usage guides
-        \item API documentation with examples
-        \item Code comments and docstrings
-        \item Accuracy reports and performance analysis
+        \item README covering installation, quickstart, and configuration
+        \item API reference with curl-ready examples for every endpoint
+        \item Inline docstrings following NumPy-style conventions
+        \item Reproducible accuracy report comparing results against published benchmarks
     \end{itemize}
 \end{enumerate}
 
 \subsection{Out of Scope}
 
-The following features are not included in the current version but may be considered for future enhancements:
+The items below fall outside the present release. Several are active candidates for a follow-up iteration:
 
 \begin{enumerate}
     \item Deep learning models for segmentation and classification
@@ -242,38 +241,38 @@ The following features are not included in the current version but may be consid
 
 \subsection{Limitations}
 
-The system has the following known limitations:
+Every vision-based system carries constraints. The ones relevant here are:
 
 \begin{enumerate}
-    \item Requires good quality photographs with proper lighting
-    \item Works best with frontal face images
-    \item May be affected by heavy makeup or filters
-    \item Foundation database limited to 187 shades (though expandable)
-    \item Undertone detection uses heuristic methods
-    \item No support for video input
-    \item Single-face analysis only
+    \item Input images must be reasonably well-lit; strong shadows or color casts degrade accuracy
+    \item The Haar detector is tuned for near-frontal poses — extreme angles will fail silently
+    \item Heavy cosmetic coverage or Instagram-style filters can shift the extracted CIELAB centroid significantly
+    \item The shade catalogue, while diverse at 187 entries, does not yet cover niche or regional brands
+    \item Undertone classification relies on hand-crafted $a^*/b^*$ thresholds rather than a learned model
+    \item Video streams are not supported; the pipeline expects single-frame inputs
+    \item Multi-face scenes are unsupported — only the largest detected face is analyzed
 \end{enumerate}
 
 \section{Organization of the Report}
 
-This report is organized into six chapters and two appendices:
+The report follows a six-chapter arc, bookended by two appendices.
 
-\textbf{Chapter 1: Introduction} provides an overview of the problem, motivation, objectives, and scope of the project. It establishes the context and rationale for developing ShadeAI.
+\textbf{Chapter 1: Introduction} frames the problem landscape, articulates why an AI-driven shade-matching tool is overdue, and pins down the project's objectives and boundaries.
 
-\textbf{Chapter 2: Literature Review} examines existing research and technologies related to skin tone detection, color science, and cosmetic recommendation systems. It identifies gaps in current solutions and establishes the theoretical foundation for the project.
+\textbf{Chapter 2: Literature Review} surveys prior work in skin-tone classification, perceptual colorimetry, and cosmetic recommendation engines, surfacing the specific shortcomings that ShadeAI is designed to address.
 
-\textbf{Chapter 3: System Design and Methodology} describes the system architecture, pipeline design, algorithms, and implementation approach. It provides detailed explanations of each component and the rationale behind design decisions.
+\textbf{Chapter 3: System Design and Methodology} walks through the six-stage pipeline architecture, detailing each module's algorithm, data flow, and the engineering trade-offs that shaped it.
 
-\textbf{Chapter 4: Implementation and Results} presents the implementation details, software and hardware requirements, and experimental results. It includes accuracy analysis, performance evaluation, and comparison with existing systems.
+\textbf{Chapter 4: Implementation and Results} covers the development environment, deployment stack, and experimental evaluation — including per-MST-class accuracy breakdowns and head-to-head comparisons with published baselines.
 
-\textbf{Chapter 5: Conclusion and Future Scope} summarizes the achievements, discusses limitations, and outlines potential future enhancements and research directions.
+\textbf{Chapter 5: Conclusion and Future Scope} distils the project's contributions, acknowledges its boundaries, and charts a roadmap for subsequent iterations.
 
-\textbf{Chapter 6: References} lists all academic papers, books, websites, and other resources referenced in the report.
+\textbf{Chapter 6: References} compiles every cited paper, standard, software library, and web resource.
 
-\textbf{Appendix A: List of Papers} documents any papers published, accepted, or communicated based on this work.
+\textbf{Appendix A: List of Papers} records publications, submissions, or communications arising from this project.
 
-\textbf{Appendix B: Plagiarism Report} includes the plagiarism and AI content detection reports as required by university guidelines.
+\textbf{Appendix B: Plagiarism Report} reproduces the mandatory plagiarism and AI-content screening certificates.
 
 \vspace{0.5cm}
 
-Each chapter builds upon the previous one, providing a comprehensive understanding of the ShadeAI system from conception to implementation and evaluation. The report demonstrates the application of computer science, artificial intelligence, and software engineering principles to solve a real-world problem with significant social and commercial impact.
+Taken together, the chapters trace ShadeAI from problem definition through algorithmic design, implementation, quantitative evaluation, and forward-looking research directions — illustrating how classical vision techniques, modern color science, and thoughtful software engineering can converge on a socially meaningful, commercially viable product.
